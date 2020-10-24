@@ -1,4 +1,5 @@
-/** (c) is not equivalent to (a) and (b) because the body
+/** 
+ *  (c) is not equivalent to (a) and (b) because the body
  *  of the do-while statement will always be executed at
  *  least once.
  */
