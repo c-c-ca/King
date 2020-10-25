@@ -8,12 +8,9 @@ int main(void)
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    e = 1.0f;
-    for (i = 1; i <= n; i++) {
-        for (j = denom = 1; j <= i; j++)
-            denom *= j;
-        e += 1.0f / (float) denom;
-    }
+    e = denom = 1.0f;
+    for (i = 1; i <= n; i++)
+        e += 1.0f / (denom *= (float) i);
 
     printf("%f\n", e);
 
