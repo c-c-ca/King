@@ -9,8 +9,8 @@ int main(void)
     scanf("%f", &epsilon);
 
     e = denom = 1.0f;
-    for (i = 1; 1.0f / denom > epsilon; i++)
-        e += 1.0f / (denom *= (float) i);
+    for (i = 1; 1.0f / (denom *= (float) i) > epsilon; i++)
+        e += 1.0f / denom;
 
     printf("%f\n", e);
 
