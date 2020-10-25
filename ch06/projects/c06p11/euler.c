@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    int i, j, n, denom;
+    int i, n, denom;
     float e;
 
     printf("Enter a number: ");
