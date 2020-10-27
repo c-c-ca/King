@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    bool weekend[7] = {[0] = true, [6] = true};
+    bool weekend[] = {true, false, false, false, false, false, true};
 
     return 0;
 }
