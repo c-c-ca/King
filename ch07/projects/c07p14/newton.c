@@ -11,7 +11,7 @@ int main(void)
     do {
         y1 = y2;
         y2 = (y1 + x / y1) / 2.0;
-    } while (fabs(y2 - y1) > 0.00001 * y1);
+    } while (fabs(y2 - y1) >= 0.00001 * y1);
 
     printf("Square root: %.5f\n", y2);
 
