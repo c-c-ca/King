@@ -14,14 +14,13 @@
 
 int main(void)
 {
-    char step, matrix[N][N] = {0};
-    int x, y, direction;
     bool legal_move[NUM_DIRECTIONS];
+    char matrix[N][N] = {0};
+    int x, y, step, direction;
 
     srand((unsigned) time(NULL));
 
-    x = y = 0;
-    for (step = 'A'; (matrix[y][x] = step) < 'Z'; step++) {
+    for (x = y = step = 0; (matrix[y][x] = 'A' + step) < 'Z'; step++) {
         legal_move[UP] = (y > 0) && !matrix[y-1][x];
         legal_move[DOWN] = (y < N - 1) && !matrix[y+1][x];
         legal_move[LEFT] = (x > 0) && !matrix[y][x-1];
