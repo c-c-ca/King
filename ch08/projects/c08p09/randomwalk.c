@@ -26,13 +26,13 @@ int main(void)
 
     x = y = 0;
     for (step = 'A'; (matrix[y][x] = step) < 'Z'; step++) {
-        if (!(valid_direction[UP] = y > 0 && matrix[y-1][x] == '.'))
-            break;
-        if (!(valid_direction[DOWN] = y < N - 1 && matrix[y+1][x] == '.'))
-            break;
-        if (!(valid_direction[LEFT] = x > 0 && matrix[y][x-1] == '.'))
-            break;
-        if (!(valid_direction[RIGHT] = x < N - 1 && matrix[y][x+1] == '.'))
+        valid_direction[UP] = (y > 0) && (matrix[y-1][x] == '.');
+        valid_direction[DOWN] = (y < N - 1) && (matrix[y+1][x] == '.');
+        valid_direction[LEFT] = (x > 0) && (matrix[y][x-1] == '.');
+        valid_direction[RIGHT] = (x < N - 1) && (matrix[y][x+1] == '.');
+
+        if (!valid_direction[UP] && !valid_direction[DOWN] &&
+            !valid_direction[LEFT] && !valid_direction[LEFT])
             break;
 
         while (!valid_direction[direction = rand() % NUM_DIRECTIONS])
