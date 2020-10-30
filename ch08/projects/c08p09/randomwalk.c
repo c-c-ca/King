@@ -44,10 +44,7 @@ int main(void)
 
     for (y = 0; y < N; y++) {
         for (x = 0; x < N; x++)
-            if (matrix[y][x])
-                printf("%c ", matrix[y][x]);
-            else
-                printf(". ");
+            printf("%c ", matrix[y][x] ? matrix[y][x] : '.');
         printf("\n");
     }
 
