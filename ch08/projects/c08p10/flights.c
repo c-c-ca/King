@@ -1,4 +1,3 @@
-#include <math.h>
 #include <stdio.h>
 
 #define NUM_FLIGHTS (sizeof(departures) / sizeof(departures[0]))
