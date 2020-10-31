@@ -17,7 +17,7 @@ int main(void)
     printf("Reversal of sentence: ");
     for (; end > 0; end = start) {
         /* find the end of the word */
-        for (; end > 0 && sentence[--end] == ' ' ;)
+        for (; end > 0 && sentence[end - 1] == ' ' ; end--)
             putchar(' ');
 
         /* find the beginning of the word */
@@ -25,7 +25,7 @@ int main(void)
             ;
         
         /* print the word */
-        for (i = start; i <= end; i++)
+        for (i = start; i < end; i++)
             putchar(sentence[i]);
     }
 
