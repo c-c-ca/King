@@ -7,12 +7,14 @@ int main(void)
     char ch, sentence[MAX_SENTENCE];
     int i, start, end;
 
+    printf("Enter a sentence: ");
     for (end = 0;
          end < MAX_SENTENCE && 
          (ch = getchar()) != '.' && ch != '!' && ch != '?'; 
          end++)
          sentence[end] = ch;
 
+    printf("Reversal of sentence: ");
     for (; end > 0; end = start) {
         /* find the end of the word */
         for (; end > 0 && sentence[--end] == ' ' ;)
