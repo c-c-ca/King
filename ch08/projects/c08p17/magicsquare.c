@@ -17,7 +17,7 @@ int main(void)
 
     row = 0;
     col = n / 2;
-    for (i = 1; i <= n * n; i++){
+    for (i = 1; i <= n * n; i++) {
         m[row][col] = i;
         row = (row - 1 + n) % n;
         col = (col + 1) % n;
