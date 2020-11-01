@@ -9,12 +9,14 @@ int main(void)
     int i, letter_counts[NUM_LETTERS] = {0};
 
     printf("Enter first word: ");
-    while (isalpha(ch = getchar()))
-        letter_counts[tolower(ch) - 'a']++;
+    while ((ch = getchar()) != ' ' && ch != '\n')
+        if (isalpha(ch))
+            letter_counts[tolower(ch) - 'a']++;
 
     printf("Enter second word: ");
-    while (isalpha(ch = getchar()))
-        letter_counts[tolower(ch) - 'a']--;
+    while ((ch = getchar()) != ' ' && ch != '\n')
+        if (isalpha(ch))
+            letter_counts[tolower(ch) - 'a']--;
 
     for (i = 0; i < NUM_LETTERS; i++)
         if (letter_counts[i] != 0)
