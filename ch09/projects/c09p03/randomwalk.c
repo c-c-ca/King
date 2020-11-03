@@ -18,7 +18,6 @@ void print_array(char walk[N][N]);
 int main(void)
 {
     char walk[N][N];
-    int x, y, step, direction;
 
     srand((unsigned) time(NULL));
     generate_random_walk(walk);
