@@ -2,25 +2,25 @@
 
 int main(void)
 {
-    float income, tax;
+    float amount, tax;
 
     printf("Enter an amount of taxable income: ");
-    scanf("%f", &income);
+    scanf("%f", &amount);
 
-    if (income > 7000.00f)
-        tax = 230.00f + 0.06f * (income - 7000.00f);
-    else if (income > 5250.00f)
-        tax = 142.50f + 0.05f * (income - 5250.00f);
-    else if (income > 3750.00f)
-        tax = 82.50f + 0.04f * (income - 3750.00f);
-    else if (income > 2250.00f)
-        tax = 37.50f + 0.03f * (income - 2250.00f);
-    else if (income > 750.00f)
-        tax = 7.50f + 0.02f * (income - 750.00f);
+    if (amount > 7000.00f)
+        tax = 230.00f + 0.06f * (amount - 7000.00f);
+    else if (amount > 5250.00f)
+        tax = 142.50f + 0.05f * (amount - 5250.00f);
+    else if (amount > 3750.00f)
+        tax = 82.50f + 0.04f * (amount - 3750.00f);
+    else if (amount > 2250.00f)
+        tax = 37.50f + 0.03f * (amount - 2250.00f);
+    else if (amount > 750.00f)
+        tax = 7.50f + 0.02f * (amount - 750.00f);
     else
-        tax = 0.01f * income;
+        tax = 0.01f * amount;
 
-    printf("Tax due: %.2f\n", tax);
+    printf("Tax due: $%.2f\n", tax);
 
     return 0;
 }
