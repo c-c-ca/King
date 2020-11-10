@@ -147,9 +147,9 @@ void analyze_hand(void)
             if (hand[card_num][RANK] == rank)
                 count++;
         switch (count) {
-            case 4: four = true;  break;
-            case 3: three = true; break;
             case 2: pairs++;      break;
+            case 3: three = true; break;
+            case 4: four = true;  break;
         }
     }
 }
