@@ -13,7 +13,7 @@ void make_empty(void)
 
 bool is_empty(void)
 {
-    top == 0;
+    return top == 0;
 }
 
 bool is_full(void)
