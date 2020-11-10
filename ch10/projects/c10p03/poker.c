@@ -85,11 +85,10 @@ void read_cards(void)
             continue;
         }
 
-        for (card_num = 0; card_num < cards_read; card_num++) {
+        for (card_num = 0; card_num < cards_read; card_num++)
             if (hand[card_num][RANK] == rank && 
                 hand[card_num][SUIT] == suit)
                 break;
-        }
 
         if (card_num < cards_read)
             printf("Duplicate card; ignored.\n");
@@ -147,9 +146,11 @@ void analyze_hand(void)
         for (card_num = 0; card_num < NUM_CARDS; card_num++)
             if (hand[card_num][RANK] == rank)
                 count++;
-        if (count == 4) four = true;
-        if (count == 3) three = true;
-        if (count == 2) pairs++;
+        switch (count) {
+            case 4: four = true;  break;
+            case 3: three = true; break;
+            case 2: pairs++;      break;
+        }
     }
 }
 
