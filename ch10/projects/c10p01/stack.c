@@ -23,12 +23,14 @@ int main(void)
     bool is_nested_properly = true;
 
     printf("Enter parentheses and/or braces: ");
-    while (is_nested_properly && (ch = getchar()) != '\n')
+    while ((ch = getchar()) != '\n')
         if (ch == '(' || ch == '{')
             push(ch);
         else if ((ch == ')' && pop() != '(') ||
-                 (ch == '}' && pop() != '{'))
+                 (ch == '}' && pop() != '{')) {
             is_nested_properly = false;
+            break;
+        }
     
     if (is_nested_properly && is_empty())
         printf("Parentheses/braces are nested properly\n");
