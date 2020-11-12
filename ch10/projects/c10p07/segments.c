@@ -47,19 +47,22 @@ void clear_digits_array(void)
 
 void process_digit(int digit, int position)
 {
-    int segment;
+    int segment, row, col;
 
     for (segment = 0; segment < 7; segment++)
-        if (segments[digit][segment])
+        if (segments[digit][segment]) {
             switch (segment) {
-                case 0: digits[0][position * 4 + 1] = '_'; break;
-                case 1: digits[1][position * 4 + 2] = '|'; break;
-                case 2: digits[2][position * 4 + 2] = '|'; break;
-                case 3: digits[2][position * 4 + 1] = '_'; break;
-                case 4: digits[2][position * 4] = '|';     break;
-                case 5: digits[1][position * 4] = '|';     break;
-                case 6: digits[1][position * 4 + 1] = '_'; break;
+                case 0:                 row = 0; break;
+                case 1: case 5: case 6: row = 1; break;
+                case 2: case 3: case 4: row = 2; break;
             }
+            switch (segment) {
+                case 4: case 5:         col = 0; break;
+                case 0: case 3: case 6: col = 1; break;
+                case 1: case 2:         col = 2; break;
+            }
+            digits[row][col + position * 4] = (segment % 3) ? '|' : '_';
+        }
 }
 
 void print_digits_array(void)
