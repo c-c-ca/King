@@ -47,33 +47,19 @@ void clear_digits_array(void)
 
 void process_digit(int digit, int position)
 {
-    /* segment 0 */
-    if (segments[digit][0])
-        digits[0][position * 4 + 1] = '_';
+    int segment;
 
-    /* segment 1 */
-    if (segments[digit][1])
-        digits[1][position * 4 + 2] = '|';
-
-    /* segment 2 */
-    if (segments[digit][2])
-        digits[2][position * 4 + 2] = '|';
-
-    /* segment 3 */
-    if (segments[digit][3])
-        digits[2][position * 4 + 1] = '_';
-
-    /* segment 4 */
-    if (segments[digit][4])
-        digits[2][position * 4] = '|';
-
-    /* segment 5 */
-    if (segments[digit][5])
-        digits[1][position * 4] = '|';
-
-    /* segment 6 */
-    if (segments[digit][6])
-        digits[1][position * 4 + 1] = '_';
+    for (segment = 0; segment < 7; segment++)
+        if (segments[digit][segment])
+            switch (segment) {
+                case 0: digits[0][position * 4 + 1] = '_'; break;
+                case 1: digits[1][position * 4 + 2] = '|'; break;
+                case 2: digits[2][position * 4 + 2] = '|'; break;
+                case 3: digits[2][position * 4 + 1] = '_'; break;
+                case 4: digits[2][position * 4] = '|';     break;
+                case 5: digits[1][position * 4] = '|';     break;
+                case 6: digits[1][position * 4 + 1] = '_'; break;
+            }
 }
 
 void print_digits_array(void)
