@@ -52,16 +52,15 @@ void process_digit(int digit, int position)
     for (segment = 0; segment < 7; segment++)
         if (segments[digit][segment]) {
             switch (segment) {
-                case 0:                 row = 0; break;
-                case 1: case 5: case 6: row = 1; break;
-                case 2: case 3: case 4: row = 2; break;
+                case 0: row = 0; col = 1; break;
+                case 1: row = 1; col = 2; break;
+                case 2: row = 2; col = 2; break;
+                case 3: row = 2; col = 1; break;
+                case 4: row = 2; col = 0; break;
+                case 5: row = 1; col = 0; break;
+                case 6: row = 1; col = 1; break;
             }
-            switch (segment) {
-                case 4: case 5:         col = 0; break;
-                case 0: case 3: case 6: col = 1; break;
-                case 1: case 2:         col = 2; break;
-            }
-            digits[row][col + position * 4] = (segment % 3) ? '|' : '_';
+        digits[row][col + position * 4] = segment % 3 ? '|' : '_';
         }
 }
 
