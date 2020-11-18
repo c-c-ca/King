@@ -21,7 +21,7 @@ int main(void)
             ;
         q = p;
 
-        while (*++p != ' ' && p < end)
+        while (++p < end && *p != ' ')
             putchar(*p);
 
         while (q >= sentence && *q == ' ')
