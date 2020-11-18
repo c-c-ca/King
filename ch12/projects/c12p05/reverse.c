@@ -16,16 +16,18 @@ int main(void)
     end = p;
 
     printf("Reversal of sentence: ");
-    for (; p >= sentence; p = q) {
-        while (--p >= sentence && *p != ' ')
-            ;
-        q = p;
+    while (p > sentence) {
+        /* find beginning of word */
+        while (p > sentence && *(p - 1) != ' ')
+            p--;
 
-        while (++p < end && *p != ' ')
-            putchar(*p);
+        /* print word */
+        for (q = p; q < end && *q != ' '; q++)
+            putchar(*q);
 
-        while (q >= sentence && *q == ' ')
-            putchar(*q--);
+        /* find end of next word */
+        while (p > sentence && *(p - 1) == ' ')
+            putchar(*--p);
     }
 
     if (end < sentence + SENTENCE_LEN)
