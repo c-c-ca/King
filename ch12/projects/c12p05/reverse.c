@@ -16,15 +16,15 @@ int main(void)
     end = p;
 
     printf("Reversal of sentence: ");
-    for (; p >= sentence; p = q) {
-        while (p >= sentence && *--p != ' ')
+    for (p--; p >= sentence; p = q) {
+        while (--p >= sentence && *p != ' ')
             ;
         q = p;
 
         while (*++p != ' ' && p < end)
             putchar(*p);
 
-        while (*q == ' ')
+        while (q >= sentence && *q == ' ')
             putchar(*q--);
     }
 
