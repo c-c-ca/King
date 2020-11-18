@@ -5,30 +5,27 @@
 
 int main(void)
 {
-    char sentence[SENTENCE_LEN], *p, *start, *stop, *end;
+    char sentence[SENTENCE_LEN], *p, *q, *end;
 
     printf("Enter a sentence: ");
     for (p = sentence;
-         p < sentence + SENTENCE_LEN && (*p = getchar()) != '\n';
+         p < sentence + SENTENCE_LEN &&
+         (*p = getchar()) != '.' && *p != '?' && *p != '!';
          p++)
         ;
-
-    if ((end = p) < sentence + SENTENCE_LEN || !isalnum(*(p - 1)))
-        end--;
+    end = p;
 
     printf("Reversal of sentence: ");
-    for (stop = end; stop > sentence; stop = start - 1) {
-        /* find start of current word */
-        for (p = stop - 1; p > sentence && *(p - 1) != ' '; --p)
+    for (; p >= sentence; p = q) {
+        while (p >= sentence && *--p != ' ')
             ;
-        start = p;
+        q = p;
 
-        /* print current word */
-        while (p < stop)
-            putchar(*p++);
+        while (*++p != ' ' && p < end)
+            putchar(*p);
 
-        if (start > sentence)
-            putchar(' ');
+        while (*q == ' ')
+            putchar(*q--);
     }
 
     if (end < sentence + SENTENCE_LEN)
