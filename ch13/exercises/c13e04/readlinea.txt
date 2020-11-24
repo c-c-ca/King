@@ -1,0 +1,1 @@
+   Skip the spaces at the beginning of the line.
