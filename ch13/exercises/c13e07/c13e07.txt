@@ -1,0 +1,2 @@
+(d) is not equivalent because it does not change str.
+(a), (b), and (c) set str to an empty string.
