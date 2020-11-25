@@ -20,8 +20,9 @@ bool test_extension(const char *file_name,
 {
     const char *p = file_name, *q = extension;
 
-    while (*p++ != '.')
-        ;
+    while (*p)
+        if (*p++ == '.')
+            break;
 
     while (*p && *q)
         if (toupper(*p++) != toupper(*q++))
