@@ -15,7 +15,7 @@ int main(void)
     const char *rank_names[] = {"Two", "Three", "Four", "Five", "Six",
                                 "Seven", "Eight", "Nine", "Ten", "Jack",
                                 "Queen", "King", "Ace"};
-    const char *suit_names[] = {"Clubs", "Diamonds", "Hearts", "Spades"};
+    const char *suit_names[] = {"clubs", "diamonds", "hearts", "spades"};
 
     srand((unsigned) time(NULL));
 
@@ -29,7 +29,7 @@ int main(void)
         if (!in_hand[suit][rank]) {
             in_hand[suit][rank] = true;
             num_cards--;
-            printf(" %s of %s\n", rank_names[rank], suit_names[suit]);
+            printf("%s of %s\n", rank_names[rank], suit_names[suit]);
         }
     }
     printf("\n");
