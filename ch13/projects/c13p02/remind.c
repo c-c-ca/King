@@ -16,7 +16,7 @@ int read_line(char str[], int n);
 int main(void)
 {
     char reminders[MAX_REMIND][MSG_LEN+1];
-    char day_str[6], time_str[13], msg_str[MSG_LEN+1], period1_str[3], period2_str[3];
+    char day_str[6], time_str[10], msg_str[MSG_LEN+1], period1_str[3], period2_str[3];
     int month1, month2, day1, day2, hour1, hour2, minute1, minute2;
     int i, j, num_remind = 0;
 
