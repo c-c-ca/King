@@ -7,7 +7,7 @@ int main(void)
                           "six", "seven", "eight", "nine"};
     const char *tens[] = {"", "", "twenty", "thirty", "forty", "fifty",
                           "sixty", "seventy", "eighty", "ninety"};
-    const char *teens[] = {"ten", "elvent", "twelve", "thirteen", 
+    const char *teens[] = {"ten", "eleven", "twelve", "thirteen", 
                            "fourteen", "fifteen", "sixteen", "seventeen",
                            "eighteen", "nineteen"};
 
