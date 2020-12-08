@@ -3,13 +3,9 @@
 int main(void)
 {
     int n;
-    const char *ones[] = {"", "one", "two", "three", "four", "five", 
-                          "six", "seven", "eight", "nine"};
-    const char *tens[] = {"", "", "twenty", "thirty", "forty", "fifty",
-                          "sixty", "seventy", "eighty", "ninety"};
-    const char *teens[] = {"ten", "eleven", "twelve", "thirteen", 
-                           "fourteen", "fifteen", "sixteen", "seventeen",
-                           "eighteen", "nineteen"};
+    const char *ones[] = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    const char *tens[] = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+    const char *teens[] = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
 
     printf("Enter a two digit number: ");
     scanf("%2d", &n);
