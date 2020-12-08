@@ -7,7 +7,8 @@ int main(void)
     printf("Enter a two digit number: ");
     scanf("%2d", &n);
 
-    if (n / 10 == 1) {
+    printf("You entered the number: ");
+    if (n / 10 == 1)
         switch(n % 10) {
             case 0: printf("ten");       break;
             case 1: printf("eleven");    break;
@@ -20,7 +21,7 @@ int main(void)
             case 8: printf("eighteen");  break;
             case 9: printf("nineteen");  break;
         }
-    } else {
+    else {
         switch (n / 10) {
             case 2: printf("twenty");  break;
             case 3: printf("thirty");  break;
@@ -31,21 +32,23 @@ int main(void)
             case 8: printf("eighty");  break;
             case 9: printf("ninety");  break;
         }
-        if (n % 10 > 0) {
+
+        if (n / 10 != 0 && n % 10 != 0)
             printf("-");
-            switch (n % 10) {
-                case 1: printf("one");   break;
-                case 2: printf("two");   break;
-                case 3: printf("three"); break;
-                case 4: printf("four");  break;
-                case 5: printf("five");  break;
-                case 6: printf("six");   break;
-                case 7: printf("seven"); break;
-                case 8: printf("eight"); break;
-                case 9: printf("nine");  break;
-            }
+
+        switch (n % 10) {
+            case 1: printf("one");   break;
+            case 2: printf("two");   break;
+            case 3: printf("three"); break;
+            case 4: printf("four");  break;
+            case 5: printf("five");  break;
+            case 6: printf("six");   break;
+            case 7: printf("seven"); break;
+            case 8: printf("eight"); break;
+            case 9: printf("nine");  break;
         }
     }
-    printf("\n");
+
+    printf(".\n");
     return 0;
 }
