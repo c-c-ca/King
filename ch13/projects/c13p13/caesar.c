@@ -24,15 +24,13 @@ int main(void)
 
 void encrypt(char *message, int shift)
 {
-    char ch;
-
-    while ((ch = *message++) != '\n')
-        if ('A' <= ch && ch <= 'Z')
-            putchar(((ch-'A') + shift) % 26 + 'A');
-        else if ('a' <= ch && ch <= 'z')
-            putchar(((ch-'a') + shift) % 26 + 'a');
+    for (; *message; message++)
+        if ('A' <= *message && *message <= 'Z')
+            putchar(((*message-'A') + shift) % 26 + 'A');
+        else if ('a' <= *message && *message <= 'z')
+            putchar(((*message-'a') + shift) % 26 + 'a');
         else
-            putchar(ch);
+            putchar(*message);
     putchar('\n');
 
 }
