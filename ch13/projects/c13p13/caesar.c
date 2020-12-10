@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 #define MSG_LEN 80
@@ -17,8 +16,8 @@ int main(void)
     printf("Enter shift amount (1-25): ");
     scanf("%d", &n);
         
-    printf("Encrypted message: ");
     encrypt(message, n);
+    printf("Encrypted message: %s", message);
 
     return 0;
 }
@@ -27,11 +26,9 @@ void encrypt(char *message, int shift)
 {
     for (; *message; message++)
         if ('A' <= *message && *message <= 'Z')
-            putchar(((*message-'A') + shift) % 26 + 'A');
+            *message = ((*message-'A') + shift) % 26 + 'A';
         else if ('a' <= *message && *message <= 'z')
-            putchar(((*message-'a') + shift) % 26 + 'a');
-        else
-            putchar(*message);
+            *message = ((*message-'a') + shift) % 26 + 'a';
 }
 
 int read_line(char str[], int n)
