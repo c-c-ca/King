@@ -31,6 +31,4 @@ void encrypt(char *message, int shift)
             putchar(((*message-'a') + shift) % 26 + 'a');
         else
             putchar(*message);
-    putchar('\n');
-
 }
