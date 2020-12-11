@@ -30,14 +30,13 @@ bool is_palindrome(const char *message)
     for (p = message; *p; p++)
         ;
 
-    for (--p; message < p;) {
+    for (--p; message < p;)
         if (!isalpha(*message))
             message++;
         else if (!isalpha(*p))
             p--;
         else if (tolower(*message++) != tolower(*p--))
             return false;
-    }
 
     return true;
 }
