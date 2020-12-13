@@ -34,5 +34,5 @@ int main(void)
  *    would allow us to use unsigned long.
  *
  *    A typedef may be used to define a type for unsigned long
- *    that does not contain a space, such as unsigned_long.
+ *    that does not contain a space, such as ULONG.
  */
