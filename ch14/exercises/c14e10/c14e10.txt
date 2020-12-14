@@ -1,0 +1,4 @@
+Functions may be passed expressions with side-effects as arguments, whereas
+macros will cause the same side-effect to occur anywhere the parameter appears
+in the sequence list of the macro.  Recursive functions cannot be written as 
+macros since each occurrence of a macro must be expanded.
