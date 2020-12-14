@@ -11,7 +11,7 @@
 
 int main(void)
 {
-    printf(MSG);
+    printf("%s\n", MSG);
 
     return 0;
 }
