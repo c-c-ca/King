@@ -1,0 +1,20 @@
+(a)
+Output if DEBUG is defined:
+Value of i: 1
+Value of j: 2
+Value of k: 3
+Value of i + j: 3
+Value of 2 * i + j - k: 1
+
+(b)
+Output if DEBUG is not defined:
+
+(c)
+In part b, DEBUG is not defined, so PRINT_DEBUG(n) is defined as 1.  Any occurrence of the
+PRINT_DEBUG(n) macro will be replaced by 1, so not output will be printed.
+
+(d)
+It is necessary, because the header file will be included in testdebug.c in the location
+where the preprocessing directive appears.  If DEBUG is defined after debug.h is included,
+the DEBUG macro will be undefined, resulting in the same behavior that occurs when DEBUG
+is not defined anywhere in the testdebug.c.
