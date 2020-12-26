@@ -1,0 +1,8 @@
+(a) Before the program is built the first time, the following programs need
+to be compiled: main.c, f1.c, and f2.c.
+
+(b) If f1.c changes, then only f1.c needs to be recompiled.
+
+(c) If f1.h changes, then f1.c, f2.c, and main.c need to be recompiled.
+
+(d) If f2.h changes, then f1.c and f2.c need to be recompiled.
