@@ -1,0 +1,8 @@
+(a) Advantages of dividing a program into multiple source files.
+
+1. Modularity.
+2. Reusability.
+
+(b) Disadvantages of dividing a program into multiple source files.
+
+1. Increased number of files to manage.
