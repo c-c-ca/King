@@ -1,0 +1,3 @@
+(b) Function definitions should not be put in a header file.  Putting function definitions
+in a header file may result in having multiple references for a function definition in
+object code.
