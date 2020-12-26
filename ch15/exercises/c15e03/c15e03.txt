@@ -1,0 +1,6 @@
+Including a system header with #include "file" may be problematic if
+a header file of the same name exists in one of the places that the
+compiler searches for before searching as if the name had been enclosed
+in brackets.  Because the sequence of places in which the compiler
+searches depends on whether quotations or brackets are used, compilation
+may take more time if a system header file is not enclosed properly.
