@@ -13,11 +13,14 @@ int main(void)
 
     clear_line();
     for (;;) {
-        word_len = read_word(word, MAX_WORD_LEN);
+        read_word(word, MAX_WORD_LEN+1);
+        word_len = strlen(word);
         if (word_len == 0) {
             flush_line();
             return 0;
         }
+        if (word_len > MAX_WORD_LEN)
+            word[MAX_WORD_LEN] = '*';
         if (word_len + 1 > space_remaining()) {
             write_line();
             clear_line();
