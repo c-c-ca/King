@@ -9,6 +9,9 @@
 int contents[STACK_SIZE];
 int top = 0;
 
+void stack_underflow(void);
+void stack_overflow(void);
+
 void make_empty(void)
 {
     top = 0;

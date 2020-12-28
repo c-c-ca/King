@@ -1,8 +1,8 @@
-rpn: rpn.o stack.o
-	gcc -o rpn rpn.o stack.o
+calc: calc.o stack.o
+	gcc -o calc calc.o stack.o
 
-rpn.o: rpn.c stack.h
-	gcc -c rpn.c
+calc.o: calc.c stack.h
+	gcc -c calc.c
 
 stack.o: stack.c stack.h
 	gcc -c stack.c
