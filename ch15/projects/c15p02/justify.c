@@ -9,16 +9,14 @@
 int main(void)
 {
     char word[MAX_WORD_LEN+2];
-    int word_len;
 
     clear_line();
     for (;;) {
-        word_len = read_word(word, MAX_WORD_LEN);
-        if (word_len == 0) {
+        if (read_word(word, MAX_WORD_LEN) == 0) {
             flush_line();
             return 0;
         }
-        if (word_len + 1 > space_remaining()) {
+        if (strlen(word) + 1 > space_remaining()) {
             write_line();
             clear_line();
         }
