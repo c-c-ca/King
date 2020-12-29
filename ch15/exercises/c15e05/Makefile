@@ -1,5 +1,5 @@
 demo: main.o f1.o f2.o
-	gcc -o main.o f1.o f2.o
+	gcc -o demo main.o f1.o f2.o
 
 main.o: main.c f1.h
 	gcc -c main.c
