@@ -2,7 +2,7 @@
 #define QUICKSORT_H
 
 /***********************************************************
- * quicksort: Sorts all numbers in a from low to hight.    *
+ * quicksort: Sorts all numbers in a from low to high.     *
  ***********************************************************/
 void quicksort(int a[], int low, int high);
 
