@@ -1,6 +1,5 @@
 /* Formats a file of text */
 
-#include <string.h>
 #include "line.h"
 #include "word.h"
 
@@ -9,14 +8,16 @@
 int main(void)
 {
     char word[MAX_WORD_LEN+2];
+    int word_len;
 
     clear_line();
     for (;;) {
-        if (read_word(word, MAX_WORD_LEN) == 0) {
+        word_len = read_word(word, MAX_WORD_LEN);
+        if (word_len == 0) {
             flush_line();
             return 0;
         }
-        if (strlen(word) + 1 > space_remaining()) {
+        if (word_len + 1 > space_remaining()) {
             write_line();
             clear_line();
         }
