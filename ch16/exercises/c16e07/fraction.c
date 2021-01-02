@@ -16,25 +16,19 @@ struct fraction divide_fraction(struct fraction f1, struct fraction f2);
 
 int main(void)
 {
-    struct fraction f, g, h;
+    struct fraction f1 = {1, 2}, f2 = {3, 4}, f3;
 
-    f.numerator = 1;
-    f.denominator = 2;
+    f3 = add_fraction(f1, f2);
+    PRINT_FRACTION(f3);
 
-    g.numerator = 3;
-    g.denominator = 4;
+    f3 = subtract_fraction(f1, f2);
+    PRINT_FRACTION(f3);
 
-    h = add_fraction(f, g);
-    PRINT_FRACTION(h);
+    f3 = multiply_fraction(f1, f2);
+    PRINT_FRACTION(f3);
 
-    h = subtract_fraction(f, g);
-    PRINT_FRACTION(h);
-
-    h = multiply_fraction(f, g);
-    PRINT_FRACTION(h);
-
-    h = divide_fraction(f, g);
-    PRINT_FRACTION(h);
+    f3 = divide_fraction(f1, f2);
+    PRINT_FRACTION(f3);
 
     return 0;
 }
@@ -58,39 +52,32 @@ struct fraction reduce_fraction(struct fraction f)
 
 struct fraction add_fraction(struct fraction f1, struct fraction f2)
 {
-    struct fraction f3;
-
-    f3.numerator = f1.numerator * f2.denominator + f2.numerator * f1.denominator;
-    f3.denominator = f1.denominator * f2.denominator;
-
-    return reduce_fraction(f3);
+    return reduce_fraction((struct fraction) {
+        f1.numerator * f2.denominator + f2.numerator * f1.denominator,
+        f1.denominator * f2.denominator
+    });
 }
 
 struct fraction subtract_fraction(struct fraction f1, struct fraction f2)
 {
-    struct fraction f3 = f2;
-    
-    f3.numerator *= -1;
-
-    return add_fraction(f1, f3);
+    return reduce_fraction((struct fraction) {
+        f1.numerator * f2.denominator - f2.numerator * f1.denominator,
+        f1.denominator * f2.denominator
+    });
 }
 
 struct fraction multiply_fraction(struct fraction f1, struct fraction f2)
 {
-    struct fraction f3 = f1;
-
-    f3.numerator *= f2.numerator;
-    f3.denominator *= f2.denominator;
-
-    return reduce_fraction(f3);
+    return reduce_fraction((struct fraction) {
+            f1.numerator * f2.numerator,
+            f1.denominator * f2.denominator
+    });
 }
 
 struct fraction divide_fraction(struct fraction f1, struct fraction f2)
 {
-    struct fraction f3;
-
-    f3.numerator = f2.denominator;
-    f3.denominator = f2.numerator;
-
-    return multiply_fraction(f1, f3);
+    return reduce_fraction((struct fraction) {
+            f1.numerator * f2.denominator,
+            f1.denominator * f2.numerator
+    });
 }
