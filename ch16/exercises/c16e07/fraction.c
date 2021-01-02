@@ -40,14 +40,9 @@ int gcd(int m, int n)
 
 struct fraction reduce_fraction(struct fraction f)
 {
-    struct fraction g;
-    int divisor;
+    int divisor = gcd(f.numerator, f.denominator);
 
-    divisor = gcd(f.numerator, f.denominator);
-    g.numerator = f.numerator / divisor;
-    g.denominator = f.denominator / divisor;
-
-    return g;
+    return (struct fraction) {f.numerator / divisor, f.denominator / divisor};
 }
 
 struct fraction add_fraction(struct fraction f1, struct fraction f2)
