@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-#define PRINT_DATE(x) printf("%d-%d-%d", x.year, x.month, x.day)
-
 struct date {
     int month;
     int day;
@@ -33,15 +31,10 @@ int main(void)
 
     printf("Day of year: %d\n", day_of_year(d2));
 
-    if (compare_dates(d1, d2) < 0) {
-        PRINT_DATE(d1);
-        printf(" is earlier than ");
-        PRINT_DATE(d2);
-    } else {
-        PRINT_DATE(d1);
-        printf(" is not earlier than ");
-        PRINT_DATE(d2);
-    }
+    printf("%d-%d-%d is %s earlier than %d-%d-%d\n",
+                d1.year, d1.month, d1.day,
+                compare_dates(d1, d2) < 0 ? "" : "not",
+                d2.year, d2.month, d2.day);
 
     return 0;
 }
