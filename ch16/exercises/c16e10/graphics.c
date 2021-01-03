@@ -47,10 +47,8 @@ int main(void)
     r = move_rectangle(r, 3, 5);
     PRINT_RECTANGLE(r); PRINT_NL();
 
-    if (contains_point(r, p3))
-        printf("Point is inside of rectangle.\n");
-    else
-        printf("Point is outside of rectangle.\n");
+    printf("Point is %s of rectangle\n",
+            contains_point ? "inside" : "outside");
 
     return 0;
 }
