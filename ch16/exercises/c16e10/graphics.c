@@ -37,6 +37,9 @@ int main(void)
     PRINT_RECTANGLE(r); PRINT_NL();
     PRINT_POINT(p3); PRINT_NL();
 
+    printf("Point is %s of rectangle\n",
+            contains_point(r, p3) ? "inside" : "outside");
+
     r = move_rectangle(r, 3, 5);
     PRINT_RECTANGLE(r); PRINT_NL();
 
@@ -75,6 +78,6 @@ struct rectangle move_rectangle(struct rectangle r, int x, int y)
 
 bool contains_point(struct rectangle r, struct point p)
 {
-    return r.upper_left.x <= p.x && r.lower_right.x < p.x &&
-        r.upper_left.y <= p.y && r.lower_right.y < p.y;
+    return r.upper_left.x <= p.x && p.x < r.lower_right.x &&
+        r.upper_left.y <= p.y && p.y < r.lower_right.y;
 }
