@@ -1,10 +1,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-#define ABS(x)   ((x) < 0 ? -(x) : (x))
-#define MIN(x,y) ((x) < (y) ? (x) : (y))
-#define MAX(x,y) ((x) > (y) ? (x) : (y))
-
 #define PRINT_NL() printf("\n")
 
 #define PRINT_POINT(p)                \
@@ -52,8 +48,8 @@ int main(void)
 
 int rectangle_area(struct rectangle r)
 {
-    return ABS(r.upper_left.x - r.lower_right.x) * 
-           ABS(r.upper_left.y - r.lower_right.y);
+    return (r.lower_right.x - r.upper_left.x) *
+        (r.lower_right.y - r.upper_left.y);
 }
 
 struct point getCenter(struct rectangle r)
@@ -79,8 +75,6 @@ struct rectangle move_rectangle(struct rectangle r, int x, int y)
 
 bool contains_point(struct rectangle r, struct point p)
 {
-    return MIN(r.upper_left.x, r.lower_right.x) <= p.x &&
-           p.x < MAX(r.upper_left.x, r.lower_right.x) && 
-           MIN(r.upper_left.y, r.lower_right.y) <= p.y &&
-           p.y < MAX(r.upper_left.y, r.lower_right.y);
+    return r.upper_left.x <= p.x && r.lower_right.x < p.x &&
+        r.upper_left.y <= p.y && r.lower_right.y < p.y;
 }
