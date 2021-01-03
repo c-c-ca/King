@@ -1,11 +1,8 @@
 #include <stdio.h>
 
-#define PRINT_FRACTION(x) printf("%d / %d\n", x.numerator, x.denominator)
+#define PRINT_FRACTION(x) printf("%d / %d\n", (x).numerator, (x).denominator)
 
-struct fraction {
-    int numerator;
-    int denominator;
-};
+struct fraction { int numerator, denominator; };
 
 int gcd(int m, int n);
 struct fraction reduce_fraction(struct fraction f);
