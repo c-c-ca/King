@@ -57,7 +57,7 @@ int main(void)
 
 int rectangle_area(struct rectangle r)
 {
-    return WIDTH(r) * LENGTH(r);
+    return LENGTH(r) * WIDTH(r);
 }
 
 struct point getCenter(struct rectangle r)
