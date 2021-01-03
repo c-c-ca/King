@@ -48,7 +48,7 @@ int main(void)
     PRINT_RECTANGLE(r); PRINT_NL();
 
     printf("Point is %s of rectangle\n",
-            contains_point ? "inside" : "outside");
+            contains_point(r, p3) ? "inside" : "outside");
 
     return 0;
 }
