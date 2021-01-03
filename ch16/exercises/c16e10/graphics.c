@@ -1,15 +1,9 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-#define MIN(x,y)        ((x) < (y) ? (x) : (y))
-#define MAX(x,y)        ((x) > (y) ? (x) : (y))
-#define IN_RANGE(x,y,z) ((y) <= (x) && (x) < (z))
-#define MIN_X(r)        (MIN((r).upper_left.x, (r).lower_right.x))
-#define MAX_X(r)        (MAX((r).upper_left.x, (r).lower_right.x))
-#define MIN_Y(r)        (MIN((r).upper_left.y, (r).lower_right.y))
-#define MAX_Y(r)        (MAX((r).upper_left.y, (r).lower_right.y))
-#define WIDTH(r)        (MAX_X(r) - MIN_X(r))
-#define LENGTH(r)       (MAX_Y(r) - MIN_Y(r))
+#define ABS(x)   ((x) < 0 ? -(x) : (x))
+#define MIN(x,y) ((x) < (y) ? (x) : (y))
+#define MAX(x,y) ((x) > (y) ? (x) : (y))
 
 #define PRINT_NL() printf("\n")
 
@@ -56,7 +50,8 @@ int main(void)
 
 int rectangle_area(struct rectangle r)
 {
-    return LENGTH(r) * WIDTH(r);
+    return ABS(r.upper_left.x - r.lower_right.x) * 
+           ABS(r.upper_left.y - r.lower_right.y);
 }
 
 struct point getCenter(struct rectangle r)
@@ -82,6 +77,8 @@ struct rectangle move_rectangle(struct rectangle r, int x, int y)
 
 bool contains_point(struct rectangle r, struct point p)
 {
-    return IN_RANGE(p.x, MIN_X(r), MAX_X(r)) && 
-           IN_RANGE(p.y, MIN_Y(r), MAX_Y(r));
+    return MIN(r.upper_left.x, r.lower_right.x) <= p.x &&
+           p.x < MAX(r.upper_left.x, r.lower_right.x) && 
+           MIN(r.upper_left.y, r.lower_right.y) <= p.y &&
+           p.y < MAX(r.upper_left.y, r.lower_right.y);
 }
