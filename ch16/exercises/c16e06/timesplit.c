@@ -4,11 +4,7 @@
     printf("time: hours = %d, minutes = %d, seconds = %d\n", \
             x.hours, x.minutes, x.seconds)
 
-struct time {
-    int hours;
-    int minutes;
-    int seconds;
-};
+struct time { int hours, minutes, seconds; };
 
 struct time split_time(long total_seconds);
 
