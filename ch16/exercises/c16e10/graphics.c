@@ -34,6 +34,8 @@ int main(void)
     struct point p1 = {0, 0}, p2 = {10, 5}, p3;
     struct rectangle r = {p1, p2};
 
+    printf("Area: %d\n", rectangle_area(r));
+
     p3 = getCenter(r);
 
     PRINT_RECTANGLE(r); PRINT_NL();
