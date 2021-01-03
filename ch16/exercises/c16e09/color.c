@@ -3,11 +3,11 @@
 
 #define PRINT_COLOR(x)                                 \
     printf("color: red = %d, green = %d, blue = %d\n", \
-            x.red, x.green, x.blue)
+            (x).red, (x).green, (x).blue)
 
 #define PRINT_COLORS_EQUAL(x,y)                        \
     printf("Colors are %s equal.\n",                   \
-            equal_color(x,y) ? "" : "not")
+            equal_color((x),(y)) ? "" : "not")
 
 #define CONSTRAIN(x) ((x) < 0 ? 0 : (x) > 255 ? 255 : (x))
 #define BRIGHTEN(x) ((int) ((double) (0 < (x) && (x) < 3 ? 3 : (x)) / 0.7))
