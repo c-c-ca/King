@@ -4,12 +4,9 @@
 
 int main(void)
 {
-    struct {
-        double imaginary;
-        double real;
-    } c1 = { 0.0, 1.0 }, 
-      c2 = { 1.0, 0.0 }, 
-      c3;
+    struct { double imaginary, real; } c1 = { 0.0, 1.0 }, 
+                                       c2 = { 1.0, 0.0 }, 
+                                       c3;
 
     c1 = c2;
 
