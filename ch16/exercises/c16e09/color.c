@@ -5,8 +5,8 @@
     printf("color: red = %d, green = %d, blue = %d\n", \
             x.red, x.green, x.blue)
 
-#define PRINT_COLORS_EQUAL(x,y)      \
-    printf("Colors are %s equal.\n", \
+#define PRINT_COLORS_EQUAL(x,y)                        \
+    printf("Colors are %s equal.\n",                   \
             equal_color(x,y) ? "" : "not")
 
 #define CONSTRAIN(x) ((x) < 0 ? 0 : (x) > 255 ? 255 : (x))
