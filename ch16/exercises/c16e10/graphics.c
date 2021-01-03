@@ -1,14 +1,15 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-#define MIN(x,y)  ((x) < (y) ? (x) : (y))
-#define MAX(x,y)  ((x) > (y) ? (x) : (y))
-#define MIN_X(r)  (MIN((r).upper_left.x, (r).lower_right.x))
-#define MAX_X(r)  (MAX((r).upper_left.x, (r).lower_right.x))
-#define MIN_Y(r)  (MIN((r).upper_left.y, (r).lower_right.y))
-#define MAX_Y(r)  (MAX((r).upper_left.y, (r).lower_right.y))
-#define WIDTH(r)  (MAX_X(r) - MIN_X(r))
-#define LENGTH(r) (MAX_Y(r) - MIN_Y(r))
+#define MIN(x,y)        ((x) < (y) ? (x) : (y))
+#define MAX(x,y)        ((x) > (y) ? (x) : (y))
+#define IN_RANGE(x,y,z) ((y) <= (x) && (x) < (z))
+#define MIN_X(r)        (MIN((r).upper_left.x, (r).lower_right.x))
+#define MAX_X(r)        (MAX((r).upper_left.x, (r).lower_right.x))
+#define MIN_Y(r)        (MIN((r).upper_left.y, (r).lower_right.y))
+#define MAX_Y(r)        (MAX((r).upper_left.y, (r).lower_right.y))
+#define WIDTH(r)        (MAX_X(r) - MIN_X(r))
+#define LENGTH(r)       (MAX_Y(r) - MIN_Y(r))
 
 #define PRINT_NL() printf("\n")
 
@@ -81,6 +82,6 @@ struct rectangle move_rectangle(struct rectangle r, int x, int y)
 
 bool contains_point(struct rectangle r, struct point p)
 {
-    return MIN_X(r) <= p.x < MAX_X(r) &&
-           MIN_Y(r) <= p.y < MAX_Y(r);
+    return IN_RANGE(p.x, MIN_X(r), MAX_X(r)) && 
+           IN_RANGE(p.y, MIN_Y(r), MAX_Y(r));
 }
