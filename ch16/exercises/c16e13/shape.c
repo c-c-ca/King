@@ -1,11 +1,12 @@
 #include <stdio.h>
 
+#define RECTANGLE 0
+#define CIRCLE    1
+
+struct point { int x, y; };
+
 int main(void)
 {
-    enum kind {RECTANGLE, CIRCLE};
-
-    struct point { int x, y; };
-
     struct shape {
         int shape_kind;         /* RECTANGLE or CIRCLE */
         struct point center;    /* coordinate of center */
