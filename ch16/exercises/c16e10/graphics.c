@@ -39,16 +39,15 @@ int main(void)
     struct point p1 = {0, 0}, p2 = {10, 5}, p3;
     struct rectangle r = {p1, p2};
 
-    PRINT_RECTANGLE(r);
-    PRINT_NL();
-    PRINT_POINT(getCenter(r));
-    PRINT_NL();
+    p3 = getCenter(r);
+
+    PRINT_RECTANGLE(r); PRINT_NL();
+    PRINT_POINT(p3); PRINT_NL();
 
     r = move_rectangle(r, 3, 5);
-    PRINT_RECTANGLE(r);
-    PRINT_NL();
+    PRINT_RECTANGLE(r); PRINT_NL();
 
-    if (contains_point(r, getCenter(r)))
+    if (contains_point(r, p3))
         printf("Point is inside of rectangle.\n");
     else
         printf("Point is outside of rectangle.\n");
