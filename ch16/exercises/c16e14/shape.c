@@ -22,7 +22,6 @@ struct shape {
 
 int shape_area(struct shape s);
 struct shape move_shape(struct shape s, int x, int y);
-int scale_dimension(int x, double c);
 struct shape scale_shape(struct shape, double c);
 
 int main(void)
@@ -68,18 +67,13 @@ struct shape move_shape(struct shape s, int x, int y)
    return s;
 }
 
-int scale_dimension(int x, double c)
-{
-    return (int) ((double) x * c);
-}
-    
 struct shape scale_shape(struct shape s, double c)
 {
     if (s.shape_kind == RECTANGLE) {
-        s.u.rectangle.height = scale_dimension(s.u.rectangle.height, c);
-        s.u.rectangle.width = scale_dimension(s.u.rectangle.width, c);
+        s.u.rectangle.height = (int) ((double) s.u.rectangle.height * c);
+        s.u.rectangle.width = (int) ((double) s.u.rectangle.width * c);
     } else
-        s.u.circle.radius = scale_dimension(s.u.circle.radius, c);
+        s.u.circle.radius = (int) ((double) s.u.circle.radius * c);
 
     return s;
 }
