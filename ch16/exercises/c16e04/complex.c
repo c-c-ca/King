@@ -1,14 +1,13 @@
 #include <stdio.h>
 
-#define PRINT_COMPLEX(x) printf("Value of " #x ": real = %g, imaginary = %g\n", x.real, x.imaginary)
+#define PRINT_COMPLEX(x)                                   \
+    printf("Value of " #x ": real = %g, imaginary = %g\n", \
+            (x).real, (x).imaginary)
 
-typedef struct complex {
-    double real;
-    double imaginary;
-} Complex;
+typedef struct complex { double real, imaginary; } Complex;
 
 Complex make_complex(double real, double imaginary);
-Complex add_complex(Complex real, Complex imaginary);
+Complex add_complex(Complex c1, Complex c2);
 
 int main(void)
 {
@@ -28,20 +27,10 @@ int main(void)
 
 Complex make_complex(double real, double imaginary)
 {
-    Complex c;
-
-    c.real = real;
-    c.imaginary = imaginary;
-
-    return c;
+    return (Complex) {real, imaginary};
 }
 
 Complex add_complex(Complex c1, Complex c2)
 {
-    Complex c3;
-
-    c3.real = c1.real + c2.real;
-    c3.imaginary = c1.imaginary + c2.imaginary;
-
-    return c3;
+    return (Complex) {c1.real + c2.real, c1.imaginary + c2.imaginary};
 }
