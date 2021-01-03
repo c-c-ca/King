@@ -1,10 +1,6 @@
 #include <stdio.h>
 
-struct date {
-    int month;
-    int day;
-    int year;
-};
+struct date { int month, day, year; };
 
 int day_of_year(struct date d);
 int compare_dates(struct date d1, struct date d2);
