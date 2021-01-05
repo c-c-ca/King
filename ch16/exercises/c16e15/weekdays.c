@@ -18,7 +18,7 @@ int main(void)
     Week_days day = TUE;
 #endif
 
-    printf("%d\n", day);
+    printf("Day of week: %d\n", day);
 
     return 0;
 }
