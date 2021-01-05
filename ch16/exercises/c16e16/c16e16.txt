@@ -1,0 +1,3 @@
+(a), (c), and (e) are true.  Enumeration constants are subject to C's scope rules,
+unlike constants created using #define, which may be used anywhere after their
+definition.  Constants in an enumeration may have the same value.
