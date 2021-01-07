@@ -132,7 +132,7 @@ void update(void)
     int i, number, change;
 
     printf("Enter part number: ");
-    scanf("%d", &change);
+    scanf("%d", &number);
     i = find_part(number);
     if (i >= 0) {
         printf("Enter change in quantity on hand: ");
