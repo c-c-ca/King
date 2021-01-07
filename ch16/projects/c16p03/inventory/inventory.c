@@ -131,7 +131,7 @@ void update(struct part inv[], int np)
     int i, number, change;
 
     printf("Enter part number: ");
-    scanf("%d", &change);
+    scanf("%d", &number);
     i = find_part(number, inv, np);
     if (i >= 0) {
         printf("Enter change in quantity on hand: ");
