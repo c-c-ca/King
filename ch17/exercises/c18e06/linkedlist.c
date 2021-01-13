@@ -73,11 +73,11 @@ void delete_from_list(struct node **list, int n)
 
     while (p->next != NULL && p->next->value != n)
         p = p->next;
-    if (p->next == NULL)
-        return;
 
-    list = &p->next;
-    p = p->next;
-    *list = p->next;
-    free(p);
+    if (p->next != NULL) {
+        list = &p->next;
+        p = p->next;
+        *list = p->next;
+        free(p);
+    }
 }
