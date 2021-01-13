@@ -43,7 +43,7 @@ struct node *read_numbers(void)
 {
     int n;
 
-    printf("Enter a series of integers (0 to terminate); ");
+    printf("Enter a series of integers (0 to terminate): ");
     for (;;) {
         scanf("%d", &n);
         if (n == 0)
