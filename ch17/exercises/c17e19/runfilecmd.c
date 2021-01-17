@@ -64,17 +64,17 @@ void run_file_cmd(char *cmd_str)
 
 void new_cmd(void)
 {
-    printf("Creating a new file...\n");
+    printf("Creating new file...\n");
 }
 
 void open_cmd(void)
 {
-    printf("Opening a file...\n");
+    printf("Opening file...\n");
 }
 
 void close_cmd(void)
 {
-    printf("Closing a file...\n");
+    printf("Closing file...\n");
 }
 
 void close_all_cmd(void)
