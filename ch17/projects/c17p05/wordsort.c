@@ -17,7 +17,7 @@ int main(void)
 
     for (;;) {
         if (num_words == MAX_WORDS) {
-            printf("-- No space left --");
+            printf("-- No space left --\n");
             break;
         }
 
