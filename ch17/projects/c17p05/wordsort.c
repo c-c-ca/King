@@ -7,7 +7,8 @@
 
 char *words[MAX_WORDS];
 
-int compare_strings(const void *p, const void *q);
+void quicksort(char *a[], int low, int high);
+int split(char *a[], int low, int high);
 int read_line(char str[], int n);
     
 int main(void)
@@ -34,7 +35,7 @@ int main(void)
         num_words++;
     }
 
-    qsort(words, sizeof(words[0]), num_words, compare_strings);
+    quicksort(words, 0, num_words - 1);
 
     printf("In sorted order:");
     for (i = 0; i < num_words; i++)
@@ -42,9 +43,34 @@ int main(void)
     printf("\n");
 }
 
-int compare_strings(const void *p, const void *q)
+void quicksort(char *a[], int low, int high)
 {
-    return strcmp(*(char **)p, *(char **)q);
+    int middle;
+
+    if (low >= high) return;
+    middle = split(a, low, high);
+    quicksort(a, low, middle - 1);
+    quicksort(a, middle + 1, high);
+}
+
+int split(char *a[], int low, int high)
+{
+    char *part_element = a[low];
+
+    for (;;) {
+        while (low < high && strcmp(part_element, a[high]) <= 0)
+            high--;
+        if (low >= high) break;
+        a[low++] = a[high];
+
+        while (low < high && strcmp(a[low], part_element) <= 0)
+            low++;
+        if (low >= high) break;
+        a[high--] = a[low];
+    }
+
+    a[high] = part_element;
+    return high;
 }
 
 int read_line(char str[], int n)
