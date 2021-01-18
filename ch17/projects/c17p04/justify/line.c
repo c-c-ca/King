@@ -37,7 +37,6 @@ void add_word(const char *word)
         printf("Error: malloc failed in add_word\n");
         exit(EXIT_FAILURE);
     }
- 
     new_word->next = NULL;
     strcpy(new_word->chars, word);
 
@@ -49,7 +48,6 @@ void add_word(const char *word)
         p->next = new_word;
         line_len++;
     }
-    
     line_len += word_len;
     num_words++;
 }
