@@ -41,13 +41,14 @@ void add_word(const char *word)
     new_word->next = NULL;
     strcpy(new_word->chars, word);
 
-    if ((p = line) != NULL) {
-        while (p->next != NULL)
-            p = p->next;
+    if (line == NULL)
+        line = new_word;
+    else {
+        for (p = line; p->next != NULL; p = p->next)
+            ;
         p->next = new_word;
         line_len++;
-    } else
-        line = new_word;
+    }
     
     line_len += word_len;
     num_words++;
