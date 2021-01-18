@@ -30,23 +30,25 @@ void clear_line(void)
 
 void add_word(const char *word)
 {
-    struct word **p = &line;
+    struct word *new_word, *p;
     int word_len = strlen(word);
-
-    if (*p != NULL) {
-        do {
-            p = &(*p)->next;
-        } while (*p != NULL);
-        line_len++;
-    }
-
-    if ((*p = malloc(sizeof(struct word) + word_len + 1)) == NULL) {
+    
+    if ((new_word = malloc(sizeof(struct word) + word_len + 1)) == NULL) {
         printf("Error: malloc failed in add_word\n");
         exit(EXIT_FAILURE);
     }
+ 
+    new_word->next = NULL;
+    strcpy(new_word->chars, word);
 
-    (*p)->next = NULL;
-    strcpy((*p)->chars, word);
+    if ((p = line) != NULL) {
+        while (p->next != NULL)
+            p = p->next;
+        p->next = new_word;
+        line_len++;
+    } else
+        line = new_word;
+    
     line_len += word_len;
     num_words++;
 }
