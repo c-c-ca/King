@@ -30,10 +30,10 @@ void clear_line(void)
 
 void add_word(const char *word)
 {
-    struct word **p;
+    struct word **p = &line;
     int word_len = strlen(word);
 
-    if (*(p = &line) != NULL) {
+    if (*p != NULL) {
         do {
             p = &(*p)->next;
         } while (*p != NULL);
