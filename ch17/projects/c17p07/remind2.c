@@ -13,6 +13,10 @@ struct vstring {
 };
 
 int read_line(char str[], int n);
+int compare_vstring(struct vstring *str, char *p);
+void copy_vstring(struct vstring *str, char *p);
+void cat_vstring(struct vstring *str, char *p, int start);
+void copy_vstring(struct vstring *str, char *p);
 void print_vstring(struct vstring *str);
 
 int main(void)
@@ -35,12 +39,12 @@ int main(void)
         read_line(msg_str, MSG_LEN);
 
         for (i = 0; i < num_remind; i++)
-            if (strncmp(day_str, reminders[i]->chars, reminders[i]->len) < 0)
+            if (compare_vstring(reminders[i], day_str) < 0)
                 break;
         for (j = num_remind; j > i; j--)
             reminders[j] = reminders[j-1];
 
-        n = 2 + strlen(msg_str);
+        n = strlen(msg_str) + 2;
         reminders[i] = malloc(sizeof(struct vstring) + n);
         if (reminders[i] == NULL) {
             printf("-- No space left --\n");
@@ -48,8 +52,8 @@ int main(void)
         }
 
         reminders[i]->len = n;
-        strncpy(reminders[i]->chars, day_str, 2);
-        strncat(reminders[i]->chars, msg_str, n - 2);
+        copy_vstring(reminders[i], day_str);
+        cat_vstring(reminders[i], msg_str, 2);
 
         num_remind++;
     }
@@ -64,14 +68,6 @@ int main(void)
     return 0;
 }
 
-void print_vstring(struct vstring *str)
-{
-    int i = 0;
-
-    while (i < str->len)
-        putchar(str->chars[i++]);
-}
-
 int read_line(char str[], int n)
 {
     int ch, i = 0;
@@ -81,4 +77,37 @@ int read_line(char str[], int n)
         str[i++] = ch;
     str[i] = '\0';
     return i;
+}
+
+void copy_vstring(struct vstring *str, char *p)
+{
+    int i = 0;
+
+    while (i < str->len)
+        str->chars[i++] = *p++;
+}
+
+void cat_vstring(struct vstring *str, char *p, int start)
+{
+    while (start < str->len && *p)
+        str->chars[start++] = *p++;
+}
+
+int compare_vstring(struct vstring *str, char *p)
+{
+    int i = 0;
+
+    while (i < str->len && *p)
+        if (str->chars[i++] != *p++)
+            return str->chars[i] - *p;
+
+    return 0;
+}
+
+void print_vstring(struct vstring *str)
+{
+    int i = 0;
+
+    while (i < str->len)
+        putchar(str->chars[i++]);
 }
