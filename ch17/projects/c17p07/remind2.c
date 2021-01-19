@@ -95,10 +95,10 @@ void cat_vstring(struct vstring *str, char *p, int start)
 
 int compare_vstring(struct vstring *str, char *p)
 {
-    int i = 0;
+    int i;
 
-    while (i < str->len && *p)
-        if (str->chars[i++] != *p++)
+    for (i = 0; i < str->len && *p; i++, p++)
+        if (str->chars[i] != *p)
             return str->chars[i] - *p;
 
     return 0;
