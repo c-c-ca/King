@@ -41,7 +41,7 @@ int main(void)
             reminders[j] = reminders[j-1];
 
         n = 2 + strlen(msg_str);
-        reminders[i] = malloc(sizeof(struct vstring) + n + 1);
+        reminders[i] = malloc(sizeof(struct vstring) + n);
         if (reminders[i] == NULL) {
             printf("-- No space left --\n");
             break;
