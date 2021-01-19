@@ -39,7 +39,7 @@ int main(void)
         read_line(msg_str, MSG_LEN);
 
         for (i = 0; i < num_remind; i++)
-            if (compare_vstring(reminders[i], day_str) < 0)
+            if (compare_vstring(reminders[i], day_str) > 0)
                 break;
         for (j = num_remind; j > i; j--)
             reminders[j] = reminders[j-1];
