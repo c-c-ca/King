@@ -101,7 +101,10 @@ int compare_vstring(struct vstring *str, char *p)
         if (str->chars[i] != *p)
             return str->chars[i] - *p;
 
-    return 0;
+    if (i == str->len)
+        return *p == '\0' ? 0 : -1;
+
+    return 1;
 }
 
 void print_vstring(struct vstring *str)
