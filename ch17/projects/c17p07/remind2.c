@@ -13,9 +13,6 @@ struct vstring {
 };
 
 int read_line(char str[], int n);
-int compare_vstring(struct vstring *str, char *p);
-void copy_vstring(struct vstring *str, char *p);
-void cat_vstring(struct vstring *str, char *p, int start);
 void print_vstring(struct vstring *str);
 
 int main(void)
@@ -38,7 +35,7 @@ int main(void)
         read_line(msg_str, MSG_LEN);
 
         for (i = 0; i < num_remind; i++)
-            if (compare_vstring(reminders[i], day_str) > 0)
+            if (strncmp(day_str, reminders[i]->chars, reminders[i]->len) < 0)
                 break;
         for (j = num_remind; j > i; j--)
             reminders[j] = reminders[j-1];
@@ -51,8 +48,8 @@ int main(void)
         }
 
         reminders[i]->len = n;
-        copy_vstring(reminders[i], day_str);
-        cat_vstring(reminders[i], msg_str, 2);
+        strncpy(reminders[i]->chars, day_str, 2);
+        strncat(reminders[i]->chars, msg_str, n - 2);
 
         num_remind++;
     }
@@ -66,37 +63,6 @@ int main(void)
 
     return 0;
 }
-
-int compare_vstring(struct vstring *str, char *p)
-{
-    int i;
-
-    for (i = 0; i < str->len && p; i++, p++)
-        if (str->chars[i] != *p)
-            return str->chars[i] - *p;
-
-    if (i == str->len && *p == '\0')
-        return 0;
-    else if (i == str->len)
-        return -1;
-    else
-        return 1;
-}
-
-void copy_vstring(struct vstring *str, char *p)
-{
-    int i = 0;
-
-    while (i < str->len && p)
-        str->chars[i++] = *p++;
-}
-
-void cat_vstring(struct vstring *str, char *p, int start)
-{
-    while (start < str->len && p)
-        str->chars[start++] = *p++;
-}
-
 
 void print_vstring(struct vstring *str)
 {
