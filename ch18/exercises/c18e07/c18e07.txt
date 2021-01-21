@@ -1,0 +1,2 @@
+(a) is false.  Only integer and character constants can be used as the 
+value of a case label in a switch statement.
