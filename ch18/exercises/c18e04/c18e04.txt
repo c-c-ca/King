@@ -1,0 +1,2 @@
+Value of f(10) on first call: 0.
+Value of f(10) on sixth call: 50.
