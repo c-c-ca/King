@@ -1,0 +1,1 @@
+(e) None of the above; array, enumeration, structure, and union variables may all be initialized.
