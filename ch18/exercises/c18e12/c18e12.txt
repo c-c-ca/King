@@ -1,0 +1,19 @@
+(a)
+
+f is a function that takes two arguments.  The first argument is a pointer to a
+function that has a long argument and returns a float value.  The second argument is
+a pointer to a char value.  f returns a pointer to a function that has a double
+argument and returns an int value.
+
+(b) 
+
+int (*f(float (*)(long), char *))(double);
+float (*g)(long);
+
+int main(void) {
+    int n;
+    char *p;
+    long int l;
+    double x;
+    ..
+    n = (*f((*g)(l), p))(x);
