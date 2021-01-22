@@ -1,0 +1,2 @@
+(a), (c), and (d) are legal. (b) is illegal; the initializer for a variable with static storage duration
+must be a constant expression, and i * i doesn't qualify.
