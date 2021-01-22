@@ -1,3 +1,3 @@
-int (*f(int))[];      /* a function can return a pointer to the first element in an array */
+int *f(int);          /* a function can return a pointer to the first element in an array */
 int (*g(int))(int);   /* a function can return a pointer to a function */
 int (*a[10])(int);    /* the elements of an array can be pointers to functions */
