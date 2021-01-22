@@ -1,0 +1,2 @@
+The storage duration of a variables determines whether or not a variable
+has a default initial value.
