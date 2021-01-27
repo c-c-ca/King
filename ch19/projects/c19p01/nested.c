@@ -22,6 +22,8 @@ int main(void)
         printf("Parentheses/braces are nested properly\n");
     else
         printf("Parentheses/braces are not nested properly\n");
+
+    destroy(s);
         
     return 0;
 }
