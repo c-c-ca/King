@@ -54,7 +54,7 @@ bool is_full(Stack s)
 
 static void resize(Stack s)
 {
-    s->contents = realloc(s->contents, s->size * 2 * sizeof(Item));
+    s->contents = realloc(s->contents, 2 * s->size * sizeof(Item));
     if (s->contents == NULL)
         terminate("Error in resize: stack could not be resized.");
     s->size *= 2;
