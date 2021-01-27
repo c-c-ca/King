@@ -4,9 +4,11 @@
 
 int main(void)
 {
+    Stack s;
     char ch;
     bool is_nested_properly = true;
-    Stack s = create();
+    
+    s = create();
 
     printf("Enter parentheses and/or braces: ");
     while ((ch = getchar()) != '\n')
