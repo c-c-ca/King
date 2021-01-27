@@ -3,10 +3,10 @@
 
 #include <stdbool.h>   /* C99 only */
 
-void insert(int i);
-int remove(void);
-int first(void);
-int last(void);
+void insert_item(int i);
+int remove_item(void);
+int first_item(void);
+int last_item(void);
 bool is_empty(void);
 
 #endif
