@@ -1,6 +1,5 @@
 #include <stdbool.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include "stackADT.h"
 
 int main(void)
@@ -28,15 +27,13 @@ int main(void)
                     case '*': push(s, op1 * op2); break;
                     case '/': push(s, op1 / op2); break;
                 }
-            } else if (ch != '=')
-                exit(EXIT_SUCCESS);
+            } else if (ch != '=') {
+                destroy(s);
+                return 0;
+            }
         } while (ch != '=');
 
         printf("Value of expression: %d\n", pop(s));
         make_empty(s);
     }
-
-    destroy(s);
-
-    return 0;
 }
