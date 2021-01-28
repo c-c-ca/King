@@ -9,7 +9,7 @@ typedef struct {
     int contents[QUEUE_SIZE];
     int first;
     int last;
-    int size;
+    int num_items;
 } Queue;
 
 void insert_item(Queue *q, int i);
