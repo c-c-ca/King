@@ -14,7 +14,7 @@ int main(void)
     while ((ch = getchar()) != '\n')
         if (ch == '(' || ch == '{')
             push(s, ch);
-        else if (((ch == ')') == (pop(s) != '('))) {
+        else if (((ch == ')') != (pop(s) == '('))) {
             is_nested_properly = false;
             break;
         }
