@@ -7,7 +7,7 @@
 static int contents[QUEUE_SIZE];
 static int first = 0;
 static int last = -1;
-static int size = 0;
+static int num_items = 0;
 
 static void terminate(char *message)
 {
@@ -17,18 +17,18 @@ static void terminate(char *message)
 
 bool is_empty(void)
 {
-    return size == 0;
+    return num_items == 0;
 }
 
 void insert_item(int i)
 {
-    if (size == QUEUE_SIZE)
+    if (num_items == QUEUE_SIZE)
         printf("Error in insert: queue is full.");
 
     if (last == QUEUE_SIZE - 1)
         last = -1;
     contents[++last] = i; 
-    size++;
+    num_items++;
 }
 
 int remove_item(void)
@@ -41,7 +41,7 @@ int remove_item(void)
     i = contents[first++];
     if (first == QUEUE_SIZE)
         first = 0;
-    size--;
+    num_items--;
     return i;
 }
 
