@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "queue.h"
 
-#define QUEUE_SIZE 100
-
 struct node {
     int data;
     struct node *next;
