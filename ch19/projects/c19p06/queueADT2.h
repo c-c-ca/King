@@ -10,8 +10,8 @@ typedef struct queue_type *Queue;
 Queue create(int size);
 void destroy(Queue q);
 void insert_item(Queue q, Item i);
-int remove_item(Queue q);
-int first_item(Queue q);
+Item remove_item(Queue q);
+Item first_item(Queue q);
 Item last_item(Queue q);
 bool is_empty(Queue q);
 
