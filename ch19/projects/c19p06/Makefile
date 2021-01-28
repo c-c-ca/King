@@ -1,9 +1,9 @@
-queueclient: queueclient.o queueADT.o
-	gcc -o queueclient queueclient.o queueADT.o
+queueclient: queueclient.o queueADT2.o
+	gcc -o queueclient queueclient.o queueADT2.o
 
-queueclient.o: queueclient.c queueADT.h
+queueclient.o: queueclient.c queueADT2.h
 	gcc -c queueclient.c
 
-queueADT.o: queueADT.c queueADT.h
-	gcc -c queueADT.c
+queueADT2.o: queueADT2.c queueADT2.h
+	gcc -c queueADT2.c
 	

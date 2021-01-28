@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "queueADT.h"
+#include "queueADT2.h"
 
 struct queue_type {
     Item *contents;
