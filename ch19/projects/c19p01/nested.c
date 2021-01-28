@@ -14,12 +14,11 @@ int main(void)
     while ((ch = getchar()) != '\n')
         if (ch == '(' || ch == '{')
             push(s, ch);
-        else if ((ch == ')' && pop(s) != '(') ||
-                 (ch == '}' && pop(s) != '{')) {
+        else if (((ch == ')') == (pop(s) != '('))) {
             is_nested_properly = false;
             break;
         }
-    
+
     if (is_nested_properly && is_empty(s))
         printf("Parentheses/braces are nested properly\n");
     else
