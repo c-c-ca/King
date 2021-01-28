@@ -8,7 +8,7 @@ struct queue_type {
     Item contents[QUEUE_SIZE];
     int first;
     int last;
-    int size;
+    int num_items;
 };
 
 static void terminate(char *message)
@@ -24,7 +24,7 @@ Queue create(void)
         terminate("Error in create: queue could not be created.");
     q->first = 0;
     q->last = -1;
-    q->size = 0;
+    q->num_items = 0;
     return q;
 }
 
@@ -35,18 +35,18 @@ void destroy(Queue q)
 
 bool is_empty(Queue q)
 {
-    return q->size == 0;
+    return q->num_items == 0;
 }
 
 void insert_item(Queue q, Item i)
 {
-    if (q->size == QUEUE_SIZE)
+    if (q->num_items == QUEUE_SIZE)
         printf("Error in insert: queue is full.");
 
     if (q->last == QUEUE_SIZE - 1)
         q->last = -1;
     q->contents[++q->last] = i; 
-    q->size++;
+    q->num_items++;
 }
 
 Item remove_item(Queue q)
@@ -59,7 +59,7 @@ Item remove_item(Queue q)
     i = q->contents[q->first++];
     if (q->first == QUEUE_SIZE)
         q->first = 0;
-    q->size--;
+    q->num_items--;
     return i;
 }
 
