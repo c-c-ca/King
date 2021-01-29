@@ -35,6 +35,7 @@ Queue create(int size)
 
 void destroy(Queue q)
 {
+    free(q->contents);
     free(q);
 }
 
