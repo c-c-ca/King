@@ -16,7 +16,7 @@ int main(void)
 void f(void)
 {
 #if defined(N)
-    printf("N is $d\n", N);
+    printf("N is %d\n", N);
 #else
     printf("N is undefined\n");
 #endif
