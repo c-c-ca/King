@@ -1,4 +1,4 @@
-/* Swaps two variables without a temporary variable by using XOR encryption */
+/* Swaps two variables without a temporary variable using XOR encryption */
 
 #include <stdio.h>
 
