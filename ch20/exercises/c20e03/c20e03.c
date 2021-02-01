@@ -1,10 +1,12 @@
-/* Performs XOR encryption in Steps 1/2 and Steps 2/3 */
-/* Step 1/2: x = msg, y = key */
-/* Step 2/3: x = key, y = msg */
+/* Swaps two variables without a temporary variable by using XOR encryption */
 
 #include <stdio.h>
 
+/* Steps 1/2: x = msg, y = key */
+/* Steps 2/3: x = key, y = msg */
+
 #define M(x,y) ((x)^=(y),(y)^=(x),(x)^=(y)) /* swap x and y */
+
 #define PRINT(x) printf("Value of " #x ": %d\n", (x))
 
 int main(void)
