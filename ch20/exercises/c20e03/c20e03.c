@@ -1,11 +1,10 @@
-/* Steps 1/2 and Steps 2/3 perform XOR encryption */
+/* Performs XOR encryption in Steps 1/2 and Steps 2/3 */
 /* Step 1/2: x = msg, y = key */
 /* Step 2/3: x = key, y = msg */
 
 #include <stdio.h>
 
-#define M(x,y) ((x)^=(y),(y)^=(x),(x)^=(y))    /* swap values for x and y */
-
+#define M(x,y) ((x)^=(y),(y)^=(x),(x)^=(y)) /* swap x and y */
 #define PRINT(x) printf("Value of " #x ": %d\n", (x))
 
 int main(void)
