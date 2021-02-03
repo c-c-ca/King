@@ -4,7 +4,7 @@ unsigned short swap_bytes(unsigned short i);
 
 int main(void)
 {
-    short n;
+    unsigned short n;
 
     printf("Enter a hexadecimal number (up to four digits): ");
     scanf("%hx", &n);
