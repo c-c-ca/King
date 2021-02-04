@@ -3,6 +3,7 @@
 
 unsigned int rotate_left(unsigned int i, int n);
 unsigned int rotate_right(unsigned int i, int n);
+int wordlength();
 
 int main(void)
 {
@@ -17,12 +18,25 @@ int main(void)
     return 0;
 }
 
-unsigned int rotate_left(unsigned int i, int n)
+int wordlength()
 {
-    return i << n | i >> sizeof(unsigned int) * 8 - n;
+    int len;
+    unsigned int word;
+
+    for (word = (unsigned int) ~0, len = 0;
+         word != 0;
+         word >>= 1, len++)
+    ;
+
+    return len;
 }
 
 unsigned int rotate_right(unsigned int i, int n)
 {
-    return i >> n | i << sizeof(unsigned int) * 8 - n;
+    return i >> n | i << wordlength() - n;
+}
+
+unsigned int rotate_left(unsigned int i, int n)
+{
+    return i << n | i >> wordlength() - n;
 }
