@@ -15,7 +15,7 @@ int main(void)
     x.ieee_float.exponent = 128;
     x.ieee_float.sign = 0;
 
-    printf("%f\n", x.value);
+    printf("%f\n", x.value); /* prints "3.141590" */
 
     return 0;
 }
