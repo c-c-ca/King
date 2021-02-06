@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+void print_ieee_float(float x);
+
 union IEEE_float {
     struct {
         unsigned int fraction: 23;
@@ -11,13 +13,25 @@ union IEEE_float {
 
 int main(void)
 {
-    union IEEE_float u;
+    float x;
 
-    u.ieee_float.fraction = 4788176;
-    u.ieee_float.exponent = 128;
-    u.ieee_float.sign = 0;
+    printf("Enter a floating-point value: ");
+    scanf("%f", &x);
 
-    printf("%f\n", u.x); /* prints "3.141590" */
+    print_ieee_float(x);
 
     return 0;
 }
+
+void print_ieee_float(float x)
+{
+    union IEEE_float u;
+
+    u.x = x;
+
+    printf("fraction: %d, exponent: %d, sign: %d\n",
+            u.ieee_float.fraction,
+            u.ieee_float.exponent,
+            u.ieee_float.sign);
+}
+
