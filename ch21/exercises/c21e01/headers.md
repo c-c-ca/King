@@ -1,7 +1,6 @@
 ## MinGW Non-standard Headers
 ### MinGW/include
 ```
-
 accctrl.h                     aclapi.h                      aclui.h                       adsprop.h                     
 afxres.h                      alloca.h                      amaudio.h                     amvideo.h                     
 audevcod.h                    autosprintf.h                 aviriff.h                     aygshell.h                    
@@ -75,7 +74,6 @@ wtypes.h                      xprtdefs.h                    zmouse.h            
 ```
 ### MinGW/lib/gcc/mingw32/9.2.0/include
 ```
-
 adxintrin.h                   ammintrin.h                   avx2intrin.h                  avx5124fmapsintrin.h          
 avx5124vnniwintrin.h          avx512bitalgintrin.h          avx512bwintrin.h              avx512cdintrin.h              
 avx512dqintrin.h              avx512erintrin.h              avx512fintrin.h               avx512ifmaintrin.h            
