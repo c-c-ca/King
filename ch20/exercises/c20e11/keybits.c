@@ -9,7 +9,7 @@ int main(void)
     int key_code = 8;
     
 #ifdef WRONG
-    /* The relational operators has higher precedence than bitwise shift operators. */
+    /* The relational operators have higher precedence than bitwise shift operators. */
     if (key_code & (SHIFT_BIT | CTRL_BIT | ALT_BIT) == 0)
         printf("No modifier keys pressed\n");
 #endif
