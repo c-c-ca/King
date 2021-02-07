@@ -11,16 +11,13 @@ int main(void)
             DWORD eax, ebx, ecx, edx;
         } dword;
         struct {
-            WORD ax; WORD;
-            WORD bx; WORD;
-            WORD cx; WORD;
-            WORD dx; WORD;
+            WORD ax, _a, bx, _b, cx, _c, dx, _d;
         } word;
         struct {
-            BYTE al, ah; WORD;
-            BYTE bl, bh; WORD;
-            BYTE cl, ch; WORD;
-            BYTE dl, dh; WORD;
+            BYTE al, ah; WORD _a;
+            BYTE bl, bh; WORD _b;
+            BYTE cl, ch; WORD _c;
+            BYTE dl, dh; WORD _d;
         } byte;
     } regs;
 
