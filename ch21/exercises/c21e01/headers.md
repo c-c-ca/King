@@ -1,5 +1,5 @@
 ## MinGW Non-standard Headers
-### C:\\MinGW\include
+### C:\\\\MinGW\include
 ```
 accctrl.h                     aclapi.h                      aclui.h                       adsprop.h                     
 afxres.h                      alloca.h                      amaudio.h                     amvideo.h                     
@@ -72,7 +72,7 @@ winver.h                      ws2spi.h                      ws2tcpip.h          
 wsipx.h                       wsnetbs.h                     wspiapi.h                     wtsapi32.h                    
 wtypes.h                      xprtdefs.h                    zmouse.h                      _mingw.h                      
 ```
-### C:\\MinGW\lib\gcc\mingw32\9.2.0\include
+### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include
 ```
 adxintrin.h                   ammintrin.h                   avx2intrin.h                  avx5124fmapsintrin.h          
 avx5124vnniwintrin.h          avx512bitalgintrin.h          avx512bwintrin.h              avx512cdintrin.h              
@@ -98,7 +98,7 @@ waitpkgintrin.h               wbnoinvdintrin.h              wmmintrin.h         
 xmmintrin.h                   xopintrin.h                   xsavecintrin.h                xsaveintrin.h                 
 xsaveoptintrin.h              xsavesintrin.h                xtestintrin.h                 
 ```
-### C:\\MinGW\lib\gcc\mingw32\9.2.0\include-fixed
+### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include-fixed
 ```
 syslimits.h                   
 ```
