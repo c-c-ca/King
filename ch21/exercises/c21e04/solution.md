@@ -22,7 +22,7 @@ Macro names begging with `PRI` or `SCN` followed by any lowercase letter or `X`.
 
 ### `<locale.h>`
 
-Macros that begin with LC_ and an uppercase letter.
+Macros that begin with `LC_` and an uppercase letter.
 
 ### `<signal.h>`
 
