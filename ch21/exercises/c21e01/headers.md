@@ -1,4 +1,4 @@
-## MinGW Non-standard Headers
+## MinGW Headers
 ### C:\\MinGW\include
 ```
 accctrl.h                     aclapi.h                      aclui.h                       adsprop.h                     
