@@ -1,4 +1,5 @@
-MinGW Non-standard Headers### C:\\\\MinGW\include
+MinGW Non-standard Headers
+### C:\\MinGW\include
 ```
 accctrl.h                     aclapi.h                      aclui.h                       adsprop.h                     
 afxres.h                      alloca.h                      amaudio.h                     amvideo.h                     
@@ -76,7 +77,7 @@ ws2spi.h                      ws2tcpip.h                    wsahelp.h           
 wsnetbs.h                     wspiapi.h                     wtsapi32.h                    wtypes.h                      
 xprtdefs.h                    zmouse.h                      _mingw.h                      
 ```
-### C:\\\\MinGW\include\ddk
+### C:\\MinGW\include\ddk
 ```
 atm.h                         batclass.h                    cfg.h                         cfgmgr32.h                    
 d4drvif.h                     d4iface.h                     ddkmapi.h                     hidclass.h                    
@@ -99,7 +100,7 @@ usbscan.h                     usbuser.h                     video.h             
 win2k.h                       winddi.h                      winddk.h                      winnt4.h                      
 winxp.h                       ws2san.h                      xfilter.h                     
 ```
-### C:\\\\MinGW\include\gdiplus
+### C:\\MinGW\include\gdiplus
 ```
 gdiplus.h                     gdiplusbase.h                 gdiplusbrush.h                gdipluscolor.h                
 gdipluscolormatrix.h          gdipluseffects.h              gdiplusenums.h                gdiplusflat.h                 
@@ -109,21 +110,21 @@ gdipluslinecaps.h             gdiplusmatrix.h               gdiplusmem.h        
 gdiplusmetaheader.h           gdipluspath.h                 gdipluspen.h                  gdipluspixelformats.h         
 gdiplusstringformat.h         gdiplustypes.h                
 ```
-### C:\\\\MinGW\include\GL
+### C:\\MinGW\include\GL
 ```
 gl.h                          glext.h                       glu.h                         
 ```
-### C:\\\\MinGW\include\libltdl
+### C:\\MinGW\include\libltdl
 ```
 lt_dlloader.h                 lt_error.h                    lt_system.h                   
 ```
-### C:\\\\MinGW\include\sys
+### C:\\MinGW\include\sys
 ```
 bsdtypes.h                    fcntl.h                       file.h                        locking.h                     
 param.h                       stat.h                        time.h                        timeb.h                       
 types.h                       unistd.h                      utime.h                       
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include
 ```
 adxintrin.h                   ammintrin.h                   avx2intrin.h                  avx5124fmapsintrin.h          
 avx5124vnniwintrin.h          avx512bitalgintrin.h          avx512bwintrin.h              avx512cdintrin.h              
@@ -151,17 +152,17 @@ wbnoinvdintrin.h              wmmintrin.h                   x86intrin.h         
 xopintrin.h                   xsavecintrin.h                xsaveintrin.h                 xsaveoptintrin.h              
 xsavesintrin.h                xtestintrin.h                 
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++
 ```
 complex.h                     cxxabi.h                      fenv.h                        math.h                        
 stdlib.h                      tgmath.h                      
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\backward
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\backward
 ```
 auto_ptr.h                    backward_warning.h            binders.h                     hashtable.h                   
 hash_fun.h                    
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\bits
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\bits
 ```
 algorithmfwd.h                allocated_ptr.h               allocator.h                   alloc_traits.h                
 atomic_base.h                 atomic_futex.h                atomic_lockfree_defines.h     basic_ios.h                   
@@ -191,7 +192,7 @@ streambuf_iterator.h          stream_iterator.h             stringfwd.h         
 unique_lock.h                 unique_ptr.h                  unordered_map.h               unordered_set.h               
 uses_allocator.h              valarray_after.h              valarray_array.h              valarray_before.h             
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\debug
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\debug
 ```
 assertions.h                  debug.h                       formatter.h                   functions.h                   
 helper_functions.h            macros.h                      map.h                         multimap.h                    
@@ -199,15 +200,15 @@ multiset.h                    safe_base.h                   safe_container.h    
 safe_local_iterator.h         safe_sequence.h               safe_unordered_base.h         safe_unordered_container.h    
 set.h                         stl_iterator.h                
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\decimal
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\decimal
 ```
 decimal.h                     
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\experimental\bits
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\experimental\bits
 ```
 lfts_config.h                 net.h                         shared_ptr.h                  
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\ext
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\ext
 ```
 aligned_buffer.h              alloc_traits.h                array_allocator.h             atomicity.h                   
 bitmap_allocator.h            cast.h                        codecvt_specializations.h     concurrence.h                 
@@ -218,7 +219,7 @@ sso_string_base.h             stdio_filebuf.h               stdio_sync_filebuf.h
 throw_allocator.h             typelist.h                    type_traits.h                 vstring.h                     
 vstring_fwd.h                 vstring_util.h                
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits
 ```
 atomic_word.h                 basic_file.h                  c++allocator.h                c++config.h                   
 c++io.h                       c++locale.h                   cpu_defines.h                 ctype_base.h                  
@@ -227,11 +228,11 @@ gthr-default.h                gthr-posix.h                  gthr-single.h       
 messages_members.h            opt_random.h                  os_defines.h                  stdc++.h                      
 stdtr1c++.h                   time_members.h                
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\mingw32\ext
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\mingw32\ext
 ```
 opt_random.h                  
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\parallel
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\parallel
 ```
 algo.h                        algobase.h                    algorithmfwd.h                balanced_quicksort.h          
 base.h                        basic_iterator.h              checkers.h                    compatibility.h               
@@ -245,19 +246,19 @@ random_shuffle.h              search.h                      settings.h          
 sort.h                        tags.h                        types.h                       unique_copy.h                 
 workstealing.h                
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\profile
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\profile
 ```
 base.h                        iterator_tracker.h            map.h                         multimap.h                    
 multiset.h                    ordered_base.h                set.h                         unordered_base.h              
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\profile\impl
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\profile\impl
 ```
 profiler.h                    profiler_algos.h              profiler_container_size.h     profiler_hashtable_size.h     
 profiler_hash_func.h          profiler_list_to_slist.h      profiler_list_to_vector.h     profiler_map_to_unordered_map.h
 profiler_node.h               profiler_state.h              profiler_trace.h              profiler_vector_size.h        
 profiler_vector_to_list.h     
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\pstl
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\pstl
 ```
 algorithm_fwd.h               algorithm_impl.h              execution_defs.h              execution_impl.h              
 glue_algorithm_defs.h         glue_algorithm_impl.h         glue_execution_defs.h         glue_memory_defs.h            
@@ -266,7 +267,7 @@ numeric_fwd.h                 numeric_impl.h                parallel_backend.h  
 parallel_backend_utils.h      parallel_impl.h               pstl_config.h                 unseq_backend_simd.h          
 utils.h                       
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\tr1
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\c++\tr1
 ```
 complex.h                     ctype.h                       fenv.h                        float.h                       
 functional_hash.h             hashtable.h                   hashtable_policy.h            inttypes.h                    
@@ -275,23 +276,23 @@ special_function_util.h       stdarg.h                      stdbool.h           
 stdio.h                       stdlib.h                      tgmath.h                      unordered_map.h               
 unordered_set.h               wchar.h                       wctype.h                      
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include\ssp
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include\ssp
 ```
 ssp.h                         stdio.h                       string.h                      unistd.h                      
 ```
-### C:\\\\MinGW\lib\gcc\mingw32\9.2.0\include-fixed
+### C:\\MinGW\lib\gcc\mingw32\9.2.0\include-fixed
 ```
 limits.h                      syslimits.h                   
 ```
-### C:\\\\MinGW\msys\1.0\include
+### C:\\MinGW\msys\1.0\include
 ```
 FlexLexer.h                   
 ```
-### C:\\\\MinGW\msys\1.0\lib\perl5\5.8\Encode
+### C:\\MinGW\msys\1.0\lib\perl5\5.8\Encode
 ```
 encode.h                      
 ```
-### C:\\\\MinGW\msys\1.0\lib\perl5\5.8\msys\CORE
+### C:\\MinGW\msys\1.0\lib\perl5\5.8\msys\CORE
 ```
 av.h                          cc_runtime.h                  config.h                      cop.h                         
 cv.h                          dosish.h                      embed.h                       embedvar.h                    
@@ -308,15 +309,15 @@ thrdvar.h                     thread.h                      uconfig.h           
 utf8.h                        utfebcdic.h                   util.h                        warnings.h                    
 XSUB.h                        
 ```
-### C:\\\\MinGW\share\autoconf
+### C:\\MinGW\share\autoconf
 ```
 acconfig.h                    
 ```
-### C:\\\\MinGW\share\gettext
+### C:\\MinGW\share\gettext
 ```
 gettext.h                     
 ```
-### C:\\\\MinGW\share\gettext\intl
+### C:\\MinGW\share\gettext\intl
 ```
 eval-plural.h                 export.h                      gettextP.h                    gmo.h                         
 hash-string.h                 libgnuintl.in.h               loadinfo.h                    localcharset.h                
@@ -324,17 +325,17 @@ lock.h                        os2compat.h                   plural-exp.h        
 printf-parse.h                relocatable.h                 tsearch.h                     vasnprintf.h                  
 vasnwprintf.h                 verify.h                      wprintf-parse.h               xsize.h                       
 ```
-### C:\\\\MinGW\share\libtool\libltdl
+### C:\\MinGW\share\libtool\libltdl
 ```
 argz_.h                       ltdl.h                        
 ```
-### C:\\\\MinGW\share\libtool\libltdl\libltdl
+### C:\\MinGW\share\libtool\libltdl\libltdl
 ```
 lt_dlloader.h                 lt_error.h                    lt_system.h                   lt__alloc.h                   
 lt__dirent.h                  lt__glibc.h                   lt__private.h                 lt__strl.h                    
 slist.h                       
 ```
-### C:\\\\MinGW\var\lib\wsl\include
+### C:\\MinGW\var\lib\wsl\include
 ```
 features.h                    
 ```
