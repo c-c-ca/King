@@ -1,0 +1,8 @@
+## Find a header file in which a macro hides a function.
+
+### MinGW\include\assert.h
+
+```
+_CRTIMP void _cdecl __MINGW_NOTHROW _assert (const char*, const char*, int) _MINGW_ATTRIB_NORETURN;
+
+```
