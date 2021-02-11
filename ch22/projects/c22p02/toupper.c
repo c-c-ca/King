@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     int ch;
 
     if (argc != 2) {
-        printf("usage: toupper file\n");
+        fprintf(stderr, "usage: toupper file\n");
         exit(EXIT_FAILURE);
     }
 
