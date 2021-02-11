@@ -7,15 +7,15 @@
 int main(int argc, char *argv[])
 {
     FILE *fp;
-    char ch;
+    int ch;
 
     if (argc != 2) {
-        printf("usage: upper filename\n");
+        printf("usage: toupper file\n");
         exit(EXIT_FAILURE);
     }
 
     if ((fp = fopen(argv[1], "r")) == NULL) {
-        printf("%s can't be opened\n", argv[1]);
+        printf("Can't open %s\n", argv[1]);
         exit(EXIT_FAILURE);
     }
 
