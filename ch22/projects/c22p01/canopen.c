@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
     FILE *fp;
     char **p;
-    bool cannot_open = false;
+    bool can_open = true;
 
     if (argc <= 1) {
         printf("usage: canopen filename1 [filename2 ...]\n");
@@ -18,13 +18,13 @@ int main(int argc, char *argv[])
     for (p = argv; *++p != NULL;)
         if ((fp = fopen(*p, "r")) == NULL) {
             printf("%s can't be opened\n", *p);
-            cannot_open = true;
+            can_open = false;
         } else {
             printf("%s can be opened\n", *p);
             fclose(fp);
         }
 
-    if (cannot_open)
+    if (!can_open)
         exit(EXIT_FAILURE);
 
     return 0;
