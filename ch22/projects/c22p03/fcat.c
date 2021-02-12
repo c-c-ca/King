@@ -7,7 +7,7 @@
 int main(int argc, char *argv[])
 {
     FILE *fp;
-    bool cannot_open = false;
+    bool can_open = true;
     char **p;
     int ch;
 
@@ -19,14 +19,14 @@ int main(int argc, char *argv[])
     for (p = argv; *++p != NULL;)
         if ((fp = fopen(*p, "r")) == NULL) {
             fprintf(stderr, "Can't open %s\n", *p);
-            cannot_open = true;
+            can_open = false;
         } else {
             while ((ch = getc(fp)) != EOF)
                 putchar(ch);
             fclose(fp);
         }
 
-    if (cannot_open)
+    if (!can_open)
         exit(EXIT_FAILURE);
 
     return 0;
