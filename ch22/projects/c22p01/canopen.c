@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     bool can_open = true;
 
     if (argc <= 1) {
-        printf("usage: canopen filename1 [filename2 ...]\n");
+        fprintf(stderr, "usage: canopen filename1 [filename2 ...]\n");
         exit(EXIT_FAILURE);
     }
 
