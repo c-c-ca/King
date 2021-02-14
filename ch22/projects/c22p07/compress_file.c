@@ -3,8 +3,9 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#define ENCODING "rle"
+#define FILE_EXT ".rle"
 #define NAME_LEN 20
 
 int main(int argc, char *argv[])
@@ -23,7 +24,7 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    sprintf(file_name, "%s.%s", argv[1], ENCODING);
+    strcat(strcpy(file_name, argv[1]), FILE_EXT);
     if ((dest_fp = fopen(file_name, "wb")) == NULL) {
         fprintf(stderr, "Can't open %s\n", file_name);
 	fclose(source_fp);

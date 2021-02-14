@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define ENCODING "rle"
-#define EXT_LEN  4
+#define EXT_LEN 4
+#define FILE_EXT ".rle"
 
 int main(int argc, char *argv[])
 {
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	}
 
 	len = strlen(argv[1]);
-	if (len < EXT_LEN || strcmp(&argv[1][len - EXT_LEN + 1], ENCODING) != 0) {
+	if (len < EXT_LEN || strcmp(&argv[1][len - EXT_LEN], FILE_EXT) != 0) {
 		fprintf(stderr, "Error: encoding not recognized\n");
 		fclose(source_fp);
 		exit(EXIT_FAILURE);
