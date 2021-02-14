@@ -1,6 +1,5 @@
 /* Compresses a file using run-length encoding */
 
-#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
