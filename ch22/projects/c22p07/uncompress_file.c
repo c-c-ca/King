@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define EXT_LEN  4
 #define ENCODING "rle"
+#define EXT_LEN  4
 
 int main(int argc, char *argv[])
 {
