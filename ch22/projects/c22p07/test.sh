@@ -2,18 +2,16 @@
 gcc -o texttobin texttobin.c
 echo 46 6F 6F 20 62 61 72 21 21 21 20 20 20 20 | ./texttobin >foo.txt 
 
-echo Before: `cat foo.txt`
-
 # Create a compressed file from the original
 gcc -o compressfile compressfile.c
-./compressfile foo.txt >temp
+./compressfile foo.txt
 
 # Uncompress the encoded file
 gcc -o uncompressfile uncompressfile.c
-./uncompressfile temp >output
+./uncompressfile foo.txt.rle
 
 # Print output
-echo After: `cat output`
+cat foo.txt
 
 # Clean up
-rm compressfile foo.txt output temp texttobin uncompressfile
+rm compressfile foo.txt foo.txt.rle texttobin uncompressfile
