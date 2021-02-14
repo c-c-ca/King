@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     unsigned char buffer[BUFFER_SIZE];
     
     if (argc != 2) {
-        fprintf(stderr, "usage: %s file\n");
+        fprintf(stderr, "usage: %s file\n", argv[0]);
         exit(EXIT_FAILURE);
     }
 
