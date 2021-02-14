@@ -4,17 +4,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define NAME_LEN 20
-#define EXT_LEN  3
-#define FMT_LEN  10
-
+#define EXT_LEN  4
 #define ENCODING "rle"
 
 int main(int argc, char *argv[])
 {
 	FILE *source_fp, *dest_fp;
-	int ch, len;
-	char file_name[NAME_LEN+1], file_ext[EXT_LEN+1], fmt_str[FMT_LEN+1];
+	int ch, len, n;
 
 	if (argc != 2) {
 		fprintf(stderr, "usage: %s file\n", argv[0]);
@@ -26,16 +22,16 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	sprintf(fmt_str, "%%%lds.%%3s", strlen(argv[1]) - 4);
-	sscanf(argv[1], fmt_str, file_name, file_ext);
-	if (strcmp(file_ext, ENCODING) != 0) {
-		fprintf(stderr, "Error: %s encoding not recognized\n", file_ext);
+	n = strlen(argv[1]);
+	if (n < EXT_LEN || strcmp(&argv[1][n - EXT_LEN + 1], ENCODING) != 0) {
+		fprintf(stderr, "Error: encoding not recognized\n");
 		fclose(source_fp);
 		exit(EXIT_FAILURE);
 	}
 
-	if ((dest_fp = fopen(file_name, "rb")) == NULL) {
-		fprintf(stderr, "Can't open %s\n", file_name);
+	argv[1][n - EXT_LEN] = '\0';
+	if ((dest_fp = fopen(argv[1], "rb")) == NULL) {
+		fprintf(stderr, "Can't open %s\n", argv[1]);
 		fclose(source_fp);
 		exit(EXIT_FAILURE);
 	}
