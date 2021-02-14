@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
         for (i = 0; i < n; i++)
             printf("%.2hX ", buffer[i]);
         for (; i < BUFFER_SIZE; i++)
-            printf("   ", buffer[i]);
+            printf("   ");
         printf("  ");
         for (i = 0; i < n; i++)
             printf("%c", isprint(buffer[i]) ? buffer[i] : '.');
