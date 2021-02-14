@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	FILE *source_fp, *dest_fp;
-	int ch, len, n;
+	int ch, len;
 
 	if (argc != 2) {
 		fprintf(stderr, "usage: %s file\n", argv[0]);
@@ -22,14 +22,14 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	n = strlen(argv[1]);
-	if (n < EXT_LEN || strcmp(&argv[1][n - EXT_LEN + 1], ENCODING) != 0) {
+	len = strlen(argv[1]);
+	if (len < EXT_LEN || strcmp(&argv[1][len - EXT_LEN + 1], ENCODING) != 0) {
 		fprintf(stderr, "Error: encoding not recognized\n");
 		fclose(source_fp);
 		exit(EXIT_FAILURE);
 	}
 
-	argv[1][n - EXT_LEN] = '\0';
+	argv[1][len - EXT_LEN] = '\0';
 	if ((dest_fp = fopen(argv[1], "rb")) == NULL) {
 		fprintf(stderr, "Can't open %s\n", argv[1]);
 		fclose(source_fp);
