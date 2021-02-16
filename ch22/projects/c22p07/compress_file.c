@@ -5,12 +5,11 @@
 #include <string.h>
 
 #define FILE_EXT ".rle"
-#define NAME_LEN 20
 
 int main(int argc, char *argv[])
 {
     FILE *source_fp, *dest_fp;
-    char file_name[NAME_LEN+1];
+    char file_name[FILENAME_MAX+1];
     int ch, last, len;
 
     if (argc != 2) {
