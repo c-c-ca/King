@@ -29,8 +29,8 @@ x: 0.1
 .1 .2 .3
 ```
 i: undefined
-j: 30
-n: undefined
+j: undefined
+n: 0
 x: undefined
 ```
 
