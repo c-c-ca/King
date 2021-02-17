@@ -28,10 +28,10 @@ x: 0.1
 ### (d)
 .1 .2 .3
 ```
-i: undefined
-j: undefined
+i: unchanged
+j: unchanged
 n: 0
-x: undefined
+x: unchanged
 ```
 
 
