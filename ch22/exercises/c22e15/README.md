@@ -1,4 +1,3 @@
-Records are 64 bytes.
 
 ### (a) Move to the beginning of a record
 ```c
@@ -19,4 +18,3 @@ fseek(fp, 64L, SEEK_CUR);
 ```c
 fseek(fp, -128L, SEEK_CUR);
 ```
-
