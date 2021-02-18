@@ -31,12 +31,10 @@ int line_length(const char *filename, int n)
 	}
 
 	while ((ch = fgetc(fp)) != EOF) {
-		len++;
-		if (ch == '\n')
-			if (--n)
-				len = 0;
-			else
-				break;
+		if (n == 1)
+			len++;
+		if (ch == '\n' && --n <= 0)
+			break;
 	}
 
 	fclose(fp);
