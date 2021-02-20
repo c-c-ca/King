@@ -230,11 +230,12 @@ void dump(void)
  **********************************************************/
 void empty(void)
 {
-    struct part *p, *temp;
+    struct part *p = inventory, *temp;
 
-    for (p = inventory; p != NULL; p = temp) {
+    while (p != NULL) {
         temp = p->next;
         free(p);
+	p = temp;
     }
 }
 
