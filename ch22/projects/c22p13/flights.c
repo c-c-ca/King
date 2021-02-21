@@ -11,6 +11,7 @@
 	       (x) < 720 ? "a.m" : "p.m");
 
 struct flight { int departure_time, arrival_time; } flights[MAX_FLIGHTS];
+
 int num_flights = 0;
 
 void find_closest_flight(int desired_time, int *departure_time, int *arrival_time);
@@ -52,15 +53,13 @@ void load_flights(const char *filename)
 		exit(EXIT_FAILURE);
 	}
 	
-	while (num_flights < MAX_FLIGHTS && fgets(line, MAX_LINE, fp) != NULL) {
+	for (; num_flights < MAX_FLIGHTS && fgets(line, MAX_LINE, fp) != NULL; num_flights++) {
 		if (sscanf(line, "%d:%d%d:%d", &dep_hours, &dep_minutes, &arr_hours, &arr_minutes) != 4) {
 		    fprintf(stderr, "Can't read %s\n", filename);
 		    exit(EXIT_FAILURE);
 		}
-		flights[num_flights++] = (struct flight) {
-			dep_hours * 60 + dep_minutes, 
-			arr_hours * 60 + arr_minutes
-		};
+		flights[num_flights].departure_time = dep_hours * 60 + dep_minutes;
+		flights[num_flights].arrival_time = arr_hours * 60 + arr_minutes;
 	}
 	
 	fclose(fp);
@@ -74,6 +73,7 @@ void find_closest_flight(int desired_time, int *departure_time, int *arrival_tim
 	     i < num_flights - 1 &&
 	     desired_time > (flights[i].departure_time + flights[i+1].departure_time) / 2;
 	     i++)
+		;
 	
 	*departure_time = flights[i].departure_time;
 	*arrival_time = flights[i].arrival_time;
