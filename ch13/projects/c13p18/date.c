@@ -3,8 +3,10 @@
 int main(void)
 {
     int month, day, year;
-    const char *month_names[] = {"January", "February", "March", "April", "May", "June",
-                                 "July", "August", "September", "November", "December"};
+    const char *month_names[] = {"January", "February", "March",
+                                 "April", "May", "June",
+                                 "July", "August", "September",
+                                 "October", "November", "December"};
 
     printf("Enter a date (mm/dd/yyyy): ");
     scanf("%2d/%2d/%4d", &month, &day, &year);
