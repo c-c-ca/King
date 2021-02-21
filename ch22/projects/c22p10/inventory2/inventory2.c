@@ -18,7 +18,7 @@ struct part *inventory = NULL;   /* points to first part */
 
 struct part *find_part(int number);
 FILE *open_file(const char *prompt, const char *mode);
-void empty(void);
+void clear(void);
 void insert(void);
 void search(void);
 void update(void);
@@ -226,19 +226,18 @@ void dump(void)
 }
 
 /**********************************************************
- * empty: Removes all parts from the database.            *
+ * clear: Removes all parts from the database.            *
  **********************************************************/
-void empty(void)
+void clear(void)
 {
-    struct part *p = inventory, *temp;
+    struct part *p, *temp;
 
-    while (p != NULL) {
+    for (p = inventory; p != NULL; p = temp) {
         temp = p->next;
         free(p);
-	p = temp;
     }
+    inventory = NULL;
 }
-
 
 /**********************************************************
  * restore: Loads the database from the specified file.   *
@@ -250,7 +249,7 @@ void restore(void)
     char name[NAME_LEN+1];
     int number, on_hand;
     
-    empty();
+    clear();
     for (p = &inventory;
          fread(&number, sizeof(number), 1, fp) == 1 &&
          fread(name, sizeof(name), 1, fp) == 1 &&
