@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	printf("\nItem\t\tUnit\t\tPurchase\n\t\tPrice\t\tDate\n");
 	while (fgets(line, MAX_LINE, fp) != NULL) {
 		sscanf(line, "%d,%f,%d/%d/%d", &item, &price, &month, &day, &year);
-		printf("%d\t\t$% 7.2f\t%d/%d/%d\n", item, price, month, day, year);
+		printf("%d\t\t$%7.2f\t%d/%d/%d\n", item, price, month, day, year);
 	}
 
 	fclose(fp);
