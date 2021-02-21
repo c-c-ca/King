@@ -14,3 +14,4 @@ message.txt.enc
 
 cat message.txt
 
+rm caesar *.txt *.enc
