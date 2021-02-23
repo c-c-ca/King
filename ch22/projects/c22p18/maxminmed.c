@@ -21,8 +21,9 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	for (i = 0; i < N && fscanf(fp, "%d", &a[i]) == 1; i++)
-		;
+	for (i = 0; i < N; i++)
+		if (fscanf(fp, "%d", &a[i]) != 1)
+			break;
 
 	qsort(a, i, sizeof(a[0]), cmp);
 
