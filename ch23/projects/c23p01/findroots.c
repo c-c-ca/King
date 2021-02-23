@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 
 int main(void)
 {
@@ -24,5 +24,6 @@ int main(void)
 	printf("Roots: %f, %f\n",
 		(-b + sqrt(discriminant)) / (2.0 * a),
 		(-b - sqrt(discriminant)) / (2.0 * a));
+
 	return 0;
 }
