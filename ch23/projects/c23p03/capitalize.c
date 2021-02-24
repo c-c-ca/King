@@ -10,7 +10,7 @@ int main(void)
 	int ch;
 
 	while ((ch = getchar()) != EOF)
-		if ((isalnum(ch) == 0) == in_word) {
+		if ((isspace(ch) != 0) == in_word) {
 			in_word = !in_word;
 			putchar(toupper(ch));
 		} else
