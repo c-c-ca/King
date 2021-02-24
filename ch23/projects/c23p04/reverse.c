@@ -4,9 +4,12 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MAX_LEN   1000
+#define MAX_WORDS 20
+
 int main(void)
 {
-	char str[1000], *words[20];
+	char str[MAX_LEN], *words[MAX_WORDS];
 	int num_words = 0;
 
 	printf("Enter words (separated by single spaces): ");
