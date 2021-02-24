@@ -7,7 +7,7 @@
 int main(void)
 {
 	char str[1000], *words[20];
-	int i, num_words = 0;
+	int num_words = 0;
 
 	printf("Enter words (separated by single spaces): ");
 	gets(str);
@@ -15,8 +15,8 @@ int main(void)
 	while ((words[num_words] = strtok(num_words > 0 ? NULL : str, " ")) != NULL)
 		num_words++;
 
-	for (i = num_words - 1; i >= 0; i--)
-		printf("%s%c", words[i], i > 0 ? ' ' : '\n');
+	while (--num_words >= 0)
+		printf("%s%c", words[num_words], num_words > 0 ? ' ' : '\n');
 
 	return 0;
 }
