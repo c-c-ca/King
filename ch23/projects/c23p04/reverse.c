@@ -1,5 +1,4 @@
-/* Prompts the user to enter a series of words and
-   prints them in reverse order */
+/* Prompts the user to enter a series of words and prints them in reverse order */
 
 #include <stdio.h>
 #include <string.h>
