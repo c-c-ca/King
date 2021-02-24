@@ -15,14 +15,13 @@ int main(void)
 	printf("Enter words (separated by single spaces): ");
 	fgets(str, MAX_LEN, stdin);
 
-	while (num_words < MAX_WORDS && 
-	       (words[num_words] = strtok(num_words > 0 ? NULL : str, " \n")) != NULL)
-		num_words++;
+	for (; num_words < MAX_WORDS; num_words++) 
+		if ((words[num_words] = strtok(num_words > 0 ? NULL : str, " \n")) == NULL)
+			break;
 
 	while (--num_words >= 0)
 		printf(num_words > 0 ? "%s " : "%s", words[num_words]);
 	printf("\n");
-
 
 	return 0;
 }
