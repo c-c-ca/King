@@ -3,16 +3,15 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_LEN   1000
 #define MAX_WORDS 20
 
 int main(void)
 {
-	char str[MAX_LEN], *words[MAX_WORDS];
+	char str[1000], *words[MAX_WORDS];
 	int num_words = 0;
 
 	printf("Enter words (separated by single spaces): ");
-	fgets(str, MAX_LEN, stdin);
+	fgets(str, sizeof(str), stdin);
 
 	for (; num_words < MAX_WORDS; num_words++) 
 		if ((words[num_words] = strtok(num_words > 0 ? NULL : str, " \n")) == NULL)
