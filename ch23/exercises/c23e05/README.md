@@ -1,5 +1,5 @@
 ```c
-long int string_to_hex(char *s)
+long int hex_string_to_long(char *s)
 {
 	long int i = 0;
 
