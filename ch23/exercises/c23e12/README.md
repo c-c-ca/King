@@ -1,23 +1,4 @@
 ```c
-int main(void)
-{
-	char str[] = "HELLO world";
-
-	printf("%s\n", string_dup("hello world"));
-
-	if (string_icmp("hello world", "helLo WOrld") == 0)
-		printf("Words are the same\n");
-	else
-		printf("Words are NOT the same\n");
-
-	string_set(str, 's');
-	printf("%s\n", string_rev(str));
-
-	return 0;
-}
-```
-
-```c
 char *string_dup(const char *s)
 {
 	char *p, *q;
