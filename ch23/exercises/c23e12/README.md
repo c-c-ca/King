@@ -1,3 +1,4 @@
+### (a)
 ```c
 char *string_dup(const char *s)
 {
@@ -15,6 +16,7 @@ char *string_dup(const char *s)
 }
 ```
 
+### (b)
 ```c
 int string_icmp(const char *s1, const char *s2)
 {
@@ -22,24 +24,26 @@ int string_icmp(const char *s1, const char *s2)
 
 	for (; (ch1 = tolower(*s1)) == (ch2 = tolower(*s2)); s1++, s2++)
 		if (ch1 == '\0')
-			return 0;
+			break;
 
 	return ch1 - ch2;
 }
 ```
 
+### (c)
 ```c
 char *string_lwr(char *s)
 {
-	char *p;
+	char *p = s;
 
-	for (p = s; *p = tolower(*p); p++)
-		;
+	while (*p = tolower(*p))
+		p++;
 
 	return s;
 }
 ```
 
+### (d)
 ```c
 char *string_rev(char *s)
 {
@@ -58,6 +62,7 @@ char *string_rev(char *s)
 }
 ```
 
+### (e)
 ```c
 char *string_set(char *s, char ch)
 {
