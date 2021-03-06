@@ -1,5 +1,5 @@
 ### (a)
-Côte d'Azur:`"C\xf4te d'Azur"`
+Côte d'Azur: `"C\xf4te d'Azur"`
 
 ### (b)
 crème brûlée: `"cr\xe8me br\xfbl\xe9" "e"`
