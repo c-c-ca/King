@@ -10,5 +10,5 @@ crème fraîche: `"cr\xe8me fra\xee" "che"`
 ### (d)
 Fahrvergnügen: `"Fahrvergn\xfcgen"`
 
-##3 (e)
+### (e)
 tête-à-tête: `"t\xeate-\xe0-t\xeate"`
