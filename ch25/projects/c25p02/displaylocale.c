@@ -3,9 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define PRINT_STRING_MEMBER(member) \
-	printf(#member " = \"%s\"\n", locale->member)
-
 #define PRINT_CHAR_MEMBER(member)             \
 	printf((locale->member) == CHAR_MAX ? \
 		#member " = CHAR_MAX\n" :     \
@@ -18,6 +15,9 @@
 		print_grouping(locale->member); \
 		printf("\n");                   \
 	} while(0)
+
+#define PRINT_STRING_MEMBER(member) \
+	printf(#member " = \"%s\"\n", locale->member)
 
 void print_grouping(char *s);
 
