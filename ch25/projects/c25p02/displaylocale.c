@@ -3,23 +3,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define PRINT_LOCALE_STRING(member) \
+#define PRINT_STRING_MEMBER(member) \
 	printf(#member " = \"%s\"\n", locale->member)
 
-#define PRINT_LOCALE_CHAR(member)             \
+#define PRINT_CHAR_MEMBER(member)             \
 	printf((locale->member) == CHAR_MAX ? \
 		#member " = CHAR_MAX\n" :     \
 		#member " = %d\n",            \
-		(locale->member))
+		locale->member)
 
-#define PRINT_LOCALE_GROUPING(member)                  \
-	do {                                           \
-		printf(#member " = ");                 \
-		print_locale_grouping(locale->member); \
-		printf("\n");                          \
+#define PRINT_GROUPING_MEMBER(member)           \
+	do {                                    \
+		printf(#member " = ");          \
+		print_grouping(locale->member); \
+		printf("\n");                   \
 	} while(0)
 
-void print_locale_grouping(char *s);
+void print_grouping(char *s);
 
 int main(int argc, char *argv[])
 {
@@ -37,35 +37,35 @@ int main(int argc, char *argv[])
 
 	locale = localeconv();
 
-	PRINT_LOCALE_STRING(decimal_point);
-	PRINT_LOCALE_STRING(thousands_sep);
-	PRINT_LOCALE_GROUPING(grouping);
-	PRINT_LOCALE_STRING(mon_decimal_point);
-	PRINT_LOCALE_STRING(mon_thousands_sep);
-	PRINT_LOCALE_GROUPING(mon_grouping);
-	PRINT_LOCALE_STRING(positive_sign);
-	PRINT_LOCALE_STRING(negative_sign);
-	PRINT_LOCALE_STRING(currency_symbol);
-	PRINT_LOCALE_CHAR(frac_digits);
-	PRINT_LOCALE_CHAR(p_cs_precedes);
-	PRINT_LOCALE_CHAR(n_cs_precedes);
-	PRINT_LOCALE_CHAR(p_sep_by_space);
-	PRINT_LOCALE_CHAR(n_sep_by_space);
-	PRINT_LOCALE_CHAR(p_sign_posn);
-	PRINT_LOCALE_CHAR(n_sign_posn);
-	PRINT_LOCALE_STRING(int_curr_symbol);
-	PRINT_LOCALE_CHAR(int_frac_digits);
-	PRINT_LOCALE_CHAR(int_p_cs_precedes);
-	PRINT_LOCALE_CHAR(int_n_cs_precedes);
-	PRINT_LOCALE_CHAR(int_p_sep_by_space);
-	PRINT_LOCALE_CHAR(int_n_sep_by_space);
-	PRINT_LOCALE_CHAR(int_p_sign_posn);
-	PRINT_LOCALE_CHAR(int_n_sign_posn);
+	PRINT_STRING_MEMBER(decimal_point);
+	PRINT_STRING_MEMBER(thousands_sep);
+	PRINT_GROUPING_MEMBER(grouping);
+	PRINT_STRING_MEMBER(mon_decimal_point);
+	PRINT_STRING_MEMBER(mon_thousands_sep);
+	PRINT_GROUPING_MEMBER(mon_grouping);
+	PRINT_STRING_MEMBER(positive_sign);
+	PRINT_STRING_MEMBER(negative_sign);
+	PRINT_STRING_MEMBER(currency_symbol);
+	PRINT_CHAR_MEMBER(frac_digits);
+	PRINT_CHAR_MEMBER(p_cs_precedes);
+	PRINT_CHAR_MEMBER(n_cs_precedes);
+	PRINT_CHAR_MEMBER(p_sep_by_space);
+	PRINT_CHAR_MEMBER(n_sep_by_space);
+	PRINT_CHAR_MEMBER(p_sign_posn);
+	PRINT_CHAR_MEMBER(n_sign_posn);
+	PRINT_STRING_MEMBER(int_curr_symbol);
+	PRINT_CHAR_MEMBER(int_frac_digits);
+	PRINT_CHAR_MEMBER(int_p_cs_precedes);
+	PRINT_CHAR_MEMBER(int_n_cs_precedes);
+	PRINT_CHAR_MEMBER(int_p_sep_by_space);
+	PRINT_CHAR_MEMBER(int_n_sep_by_space);
+	PRINT_CHAR_MEMBER(int_p_sign_posn);
+	PRINT_CHAR_MEMBER(int_n_sign_posn);
 
 	return 0;
 }
 
-void print_locale_grouping(char *s)
+void print_grouping(char *s)
 {
 	while (*s)
 		printf("%d", *s++);
