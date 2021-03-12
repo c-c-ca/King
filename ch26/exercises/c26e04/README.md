@@ -6,7 +6,7 @@ void display(int n, ...)
 	va_start(ap, n);
 
 	while (n--)
-		printf(n > 0 ? "%s " : "%s\n", va_arg(ap, char *));
+		printf("%s%c", va_arg(ap, char *), n > 0 ? ' ' : '\n');
 
 	va_end(ap);
 }
