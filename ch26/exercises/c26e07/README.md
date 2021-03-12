@@ -1,0 +1,1 @@
+Convert the string that `p` points to into a `long int` and assign it to `value`. Modify `p` so that it points to the first character not included in the conversion or the null character if the entire string was consumed. The base used for the conversion is 10.
