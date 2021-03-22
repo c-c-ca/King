@@ -3,7 +3,7 @@
 
 #define SECONDS_PER_DAY 86400
 
-void read_date(struct tm *tp, const char *msg);
+void read_date(struct tm *ptr, const char *msg);
 
 int main(void)
 {
@@ -18,14 +18,14 @@ int main(void)
 	return 0;
 }
 
-void read_date(struct tm *tp, const char *msg)
+void read_date(struct tm *ptr, const char *msg)
 {
 	/* initialize unused members */
-	tp->tm_sec = tp->tm_min = tp->tm_hour = 0;
-	tp->tm_isdst = -1;
+	ptr->tm_sec = ptr->tm_min = ptr->tm_hour = 0;
+	ptr->tm_isdst = -1;
 
 	printf("%s", msg);
-	scanf("%d/%d/%d", &tp->tm_mon, &tp->tm_mday, &tp->tm_year);
-	tp->tm_mon--;
-	tp->tm_year -= 1900;
+	scanf("%d/%d/%d", &ptr->tm_mon, &ptr->tm_mday, &ptr->tm_year);
+	ptr->tm_mon--;
+	ptr->tm_year -= 1900;
 }
