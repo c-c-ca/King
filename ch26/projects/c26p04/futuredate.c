@@ -10,7 +10,7 @@ int main(void)
 	t.tm_sec = t.tm_min = t.tm_hour = 0;
 	t.tm_isdst = -1;
 
-	printf("Enter month (1 - 12): ");
+	printf("Enter month (1-12): ");
 	scanf("%d", &t.tm_mon);
 	t.tm_mon--;
 
