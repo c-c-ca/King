@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <time.h>
 
+#define SECONDS_PER_DAY 86400
+
 void read_date(struct tm *tp, const char *msg);
 
 int main(void)
@@ -10,8 +12,8 @@ int main(void)
 	read_date(&t1, "Enter first date (mm/dd/yyyy): ");
 	read_date(&t2, "Enter second date (mm/dd/yyyy): ");
 
-	printf("\nDifference between dates: %g sec.\n",
-	       difftime(mktime(&t2), mktime(&t1)));
+	printf("\nDifference between dates: %g days\n",
+	       difftime(mktime(&t2), mktime(&t1)) / SECONDS_PER_DAY);
 
 	return 0;
 }
