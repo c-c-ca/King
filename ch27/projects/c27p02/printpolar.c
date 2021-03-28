@@ -5,7 +5,6 @@
 int main(void)
 {
 	double a, b;
-	double complex x;
 
 	printf("Enter real part: ");
 	scanf("%lf", &a);
