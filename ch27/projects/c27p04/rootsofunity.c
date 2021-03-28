@@ -7,7 +7,7 @@ int main(void)
 	int k, n;
 	double complex root;
 
-	printf("Enter number of roots: ");
+	printf("Enter a value for n: ");
 	scanf("%d", &n);
 
 	for (k = 0; k < n; k++) {
