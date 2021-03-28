@@ -1,5 +1,3 @@
-/* Finds the roots of the equation 5x**2 + 2x + 1 = 0 */
-
 #include <complex.h>
 #include <stdio.h>
 #include <tgmath.h>
