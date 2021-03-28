@@ -16,16 +16,13 @@ int main(void)
 
 	printf("Enter a value for a: ");
 	scanf("%lf", &a);
-
 	printf("Enter a value for b: ");
 	scanf("%lf", &b);
-
 	printf("Enter a value for c: ");
 	scanf("%lf", &c);
 
 	discriminant = b * b - 4 * a * c;
 	discriminant_sqrt = csqrt(discriminant);
-
 	root1 = (-b + discriminant_sqrt) / (2 * a);
 	root2 = (-b - discriminant_sqrt) / (2 * a);
 
