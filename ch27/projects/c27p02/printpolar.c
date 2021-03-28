@@ -15,6 +15,5 @@ int main(void)
 	printf("Argument: %f\n", carg(a + b * I));
 	printf("Absolute value: %f\n", sqrt(a * a + b * b));
 
-
 	return 0;
 }
